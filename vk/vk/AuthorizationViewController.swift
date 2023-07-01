@@ -16,6 +16,7 @@ final class AuthorizationViewController: UIViewController {
     private let passwordRecoveryButton = UIButton()
     private let signInButton = UIButton()
     private let textColor = UIColor.white
+    let tabBar = TabBarBuilder.createTabBarController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -170,40 +171,18 @@ final class AuthorizationViewController: UIViewController {
         ])
     }
     
-    func createTabBarController() -> UITabBarController {
-        let newsFeedviewController = UINavigationController(rootViewController: NewsFeedViewController())
-        newsFeedviewController.tabBarItem.image = UIImage(systemName: "house")
-        
-        let servicesViewController = UINavigationController(rootViewController: ServicesViewController())
-        servicesViewController.tabBarItem.image = UIImage(systemName: "squareshape.split.2x2")
-        
-        let messengerViewController = UINavigationController(rootViewController: MessengerViewController())
-        messengerViewController.tabBarItem.image = UIImage(systemName: "message")
-        
-        let clipsViewController = UINavigationController(rootViewController: ClipsViewController())
-        clipsViewController.tabBarItem.image = UIImage(systemName: "video")
-        
-        let videoViewController = UINavigationController(rootViewController: VideoViewController())
-        videoViewController.tabBarItem.image = UIImage(systemName: "plus.square.on.square")
-        
-        let tabBarController = UITabBarController()
-        tabBarController.tabBar.tintColor = .white
-        tabBarController.setViewControllers([newsFeedviewController, servicesViewController, messengerViewController, clipsViewController, videoViewController], animated: true)
-        
-        return tabBarController
-    }
-    
     @objc func loginButtonPressed(_ loginButton: UIButton) {
-        if loginTextField.hasText && passwordTextField.hasText {
-            let tabBarController = createTabBarController()
-//            navigationController?.pushViewController(tabBarController, animated: true)
-            tabBarController.modalPresentationStyle = .fullScreen
-            present(tabBarController, animated: true)
-        } else {
-            let alertController = UIAlertController(title: "", message: "Неверно введены логин и/или пароль", preferredStyle: .alert)
-            alertController.addAction(UIAlertAction(title: "Ок", style: .destructive))
-            present(alertController, animated: true)
-        }
+//        if loginTextField.hasText && passwordTextField.hasText {
+//            let tabBarController = createTabBarController()
+//            tabBarController.modalPresentationStyle = .fullScreen
+//            present(tabBarController, animated: true)
+//        } else {
+//            let alertController = UIAlertController(title: "", message: "Неверно введены логин и/или пароль", preferredStyle: .alert)
+//            alertController.addAction(UIAlertAction(title: "Ок", style: .destructive))
+//            present(alertController, animated: true)
+//        }
+        tabBar.modalPresentationStyle = .fullScreen
+        show(tabBar, sender: self)
     }
     
     @objc func hideKeyboard(_: UIView) {

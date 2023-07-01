@@ -1,18 +1,19 @@
 //
-//  ServicesViewController.swift
+//  UserViewController.swift
 //  vk
 //
-//  Created by nastasya on 28.06.2023.
+//  Created by nastasya on 29.06.2023.
 //
 
 import UIKit
 
-class ServicesViewController: UIViewController {
+final class UserViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        view.backgroundColor = .black.withAlphaComponent(0.7)
+
     }
     
 
