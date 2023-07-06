@@ -23,6 +23,7 @@
 		EE9B12B12A4F63F4002235B3 /* AvailableCommunitiesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9B12B02A4F63F4002235B3 /* AvailableCommunitiesTableViewController.swift */; };
 		EE9B12B32A50A410002235B3 /* FriendCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9B12B22A50A410002235B3 /* FriendCollectionViewController.swift */; };
 		EE9B12B52A50A44B002235B3 /* FriendCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9B12B42A50A44B002235B3 /* FriendCollectionViewCell.swift */; };
+		EE9B12D22A56EF36002235B3 /* Publication.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9B12D12A56EF36002235B3 /* Publication.swift */; };
 		EEB738E12A49E3B0001F8A1B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB738E02A49E3B0001F8A1B /* AppDelegate.swift */; };
 		EEB738E32A49E3B0001F8A1B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB738E22A49E3B0001F8A1B /* SceneDelegate.swift */; };
 		EEB738E52A49E3B0001F8A1B /* AuthorizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB738E42A49E3B0001F8A1B /* AuthorizationViewController.swift */; };
@@ -48,6 +49,7 @@
 		EE9B12B02A4F63F4002235B3 /* AvailableCommunitiesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvailableCommunitiesTableViewController.swift; sourceTree = "<group>"; };
 		EE9B12B22A50A410002235B3 /* FriendCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendCollectionViewController.swift; sourceTree = "<group>"; };
 		EE9B12B42A50A44B002235B3 /* FriendCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendCollectionViewCell.swift; sourceTree = "<group>"; };
+		EE9B12D12A56EF36002235B3 /* Publication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Publication.swift; sourceTree = "<group>"; };
 		EEB738DD2A49E3B0001F8A1B /* vk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = vk.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEB738E02A49E3B0001F8A1B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EEB738E22A49E3B0001F8A1B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -73,6 +75,7 @@
 			isa = PBXGroup;
 			children = (
 				EE9B12A02A4DC0A8002235B3 /* User.swift */,
+				EE9B12D12A56EF36002235B3 /* Publication.swift */,
 				EE9B12A52A4EF55A002235B3 /* Community.swift */,
 			);
 			path = Models;
@@ -208,6 +211,7 @@
 				EE9B12B12A4F63F4002235B3 /* AvailableCommunitiesTableViewController.swift in Sources */,
 				EE9B129D2A4DBCD4002235B3 /* UserViewController.swift in Sources */,
 				EE9B12A62A4EF55A002235B3 /* Community.swift in Sources */,
+				EE9B12D22A56EF36002235B3 /* Publication.swift in Sources */,
 				EE9B129F2A4DBDE9002235B3 /* CommunitiesTableViewController.swift in Sources */,
 				EEB738E52A49E3B0001F8A1B /* AuthorizationViewController.swift in Sources */,
 				EE9B12AF2A4EFB8E002235B3 /* AvailableCommunityTableViewCell.swift in Sources */,

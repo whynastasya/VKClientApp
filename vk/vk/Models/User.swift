@@ -10,7 +10,7 @@ import Foundation
 struct User {
     let fullname: String
     let avatar: String
-    let publications: [String]
+    let publications: [Publication]
     var age: String = ""
     var city: String = ""
 }

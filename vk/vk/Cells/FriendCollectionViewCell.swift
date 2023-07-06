@@ -13,11 +13,14 @@ final class FriendCollectionViewCell: UICollectionViewCell {
     
     private let publicationImageView = UIImageView()
     private let likeButton = UIButton()
+    private let likeCountLabel = UILabel()
+    private var likeCount = 0
     
     override init(frame: CGRect) {
         super.init(frame: .zero)
         setupPublicationImageView()
         setupLikeButton()
+        setupLikeCountLabel()
     }
     
     required init?(coder: NSCoder) {
@@ -52,15 +55,40 @@ final class FriendCollectionViewCell: UICollectionViewCell {
         ])
     }
     
+    private func setupLikeCountLabel() {
+        contentView.addSubview(likeCountLabel)
+        likeCountLabel.translatesAutoresizingMaskIntoConstraints = false
+        likeCountLabel.font = UIFont.systemFont(ofSize: 18, weight: .regular)
+        likeCountLabel.textColor = .gray
+        likeCountLabel.text = "\(likeCount)"
+        NSLayoutConstraint.activate([
+            likeCountLabel.trailingAnchor.constraint(equalTo: likeButton.leadingAnchor),
+            likeCountLabel.centerYAnchor.constraint(equalTo: likeButton.centerYAnchor),
+            
+        ])
+    }
+    
     @objc func like(_ : UIButton) {
         if likeButton.isSelected == false {
             likeButton.isSelected = true
+            likeCount += 1
+            likeCountLabel.text = "\(likeCount)"
+            likeCountLabel.textColor = .red
         } else {
             likeButton.isSelected = false
+            likeCount -= 1
+            likeCountLabel.text = "\(likeCount)"
+            likeCountLabel.textColor = .gray
         }
     }
     
-    func configure(with publication: String) {
-        publicationImageView.image = UIImage(named: publication)
+    func configure(with publication: Publication) {
+        publicationImageView.image = UIImage(named: publication.name)
+        likeButton.isSelected = publication.isLiked
+        if publication.isLiked == true {
+            likeCountLabel.textColor = .red
+        }
+        likeCount = publication.likeCount
+        likeCountLabel.text = "\(likeCount)"
     }
 }
