@@ -16,7 +16,6 @@ final class AuthorizationViewController: UIViewController {
     private let passwordRecoveryButton = UIButton()
     private let signInButton = UIButton()
     private let textColor = UIColor.white
-    let tabBar = TabBarBuilder.createTabBarController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,6 +32,8 @@ final class AuthorizationViewController: UIViewController {
             passwordTextField.bottomAnchor.constraint(equalToSystemSpacingBelow: loginButton.topAnchor, multiplier: 1.0)
         ]
         view.keyboardLayoutGuide.setConstraints(nearBottomConstraints, activeWhenNearEdge: .top)
+        navigationController?.hidesBarsOnSwipe = true
+        navigationController?.navigationBar.isTranslucent = false
     }
     
     private func setupLogoImageView() {
@@ -181,6 +182,8 @@ final class AuthorizationViewController: UIViewController {
 //            alertController.addAction(UIAlertAction(title: "Ок", style: .destructive))
 //            present(alertController, animated: true)
 //        }
+        let tabBar = TabBarBuilder.createTabBarController()
+        tabBar.tabBar.backgroundColor = .darkGray.withAlphaComponent(0.3)
         tabBar.modalPresentationStyle = .fullScreen
         show(tabBar, sender: self)
     }

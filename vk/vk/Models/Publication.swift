@@ -8,7 +8,11 @@
 import Foundation
 
 struct Publication {
-    let name: String
+    let user: User
+    let photo: String
+    let date: String
     let isLiked: Bool
     let likeCount: Int
+    let commentCount: Int
+    let viewerCount: Int
 }

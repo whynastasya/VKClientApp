@@ -9,13 +9,13 @@ import UIKit
 
 final class FriendCollectionViewController: UICollectionViewController {
 
-    var friend = User(fullname: "", avatar: "", publications: [])
+    var friend = User(surname: "", name: "", avatar: "", publications: [])
     
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.register(FriendCollectionViewCell.self, forCellWithReuseIdentifier: FriendCollectionViewCell.identifier)
         setupCollectionViewFlowLayout()
-        navigationItem.title = friend.fullname
+        navigationItem.title = friend.name + friend.surname
     }
 
     private func setupCollectionViewFlowLayout() {

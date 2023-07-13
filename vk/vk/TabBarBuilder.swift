@@ -10,9 +10,10 @@ import UIKit
 
 final class TabBarBuilder {
     static func createTabBarController() -> UITabBarController {
-        let newsFeedviewController = UINavigationController(rootViewController: NewsFeedViewController())
+        let newsFeedviewController = UINavigationController(rootViewController: NewsFeedTableViewController())
         newsFeedviewController.tabBarItem.image = UIImage(systemName: "house")
-        
+//        newsFeedviewController.hidesBarsOnSwipe = true
+
         let groupsViewController = UINavigationController(rootViewController: CommunitiesTableViewController())
         groupsViewController.tabBarItem.image = UIImage(systemName: "squareshape.split.2x2")
         

@@ -83,7 +83,7 @@ final class FriendCollectionViewCell: UICollectionViewCell {
     }
     
     func configure(with publication: Publication) {
-        publicationImageView.image = UIImage(named: publication.name)
+        publicationImageView.image = UIImage(named: publication.photo)
         likeButton.isSelected = publication.isLiked
         if publication.isLiked == true {
             likeCountLabel.textColor = .red

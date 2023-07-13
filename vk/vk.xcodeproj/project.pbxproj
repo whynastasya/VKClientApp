@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		EE9B12372A4C6E31002235B3 /* NewsFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9B12362A4C6E31002235B3 /* NewsFeedViewController.swift */; };
+		EE9B12372A4C6E31002235B3 /* NewsFeedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9B12362A4C6E31002235B3 /* NewsFeedTableViewController.swift */; };
 		EE9B123B2A4C6E89002235B3 /* MessengerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9B123A2A4C6E89002235B3 /* MessengerViewController.swift */; };
 		EE9B12972A4DBA38002235B3 /* TabBarBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9B12962A4DBA38002235B3 /* TabBarBuilder.swift */; };
 		EE9B12992A4DBC07002235B3 /* FriendsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9B12982A4DBC07002235B3 /* FriendsTableViewController.swift */; };
@@ -24,6 +24,11 @@
 		EE9B12B32A50A410002235B3 /* FriendCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9B12B22A50A410002235B3 /* FriendCollectionViewController.swift */; };
 		EE9B12B52A50A44B002235B3 /* FriendCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9B12B42A50A44B002235B3 /* FriendCollectionViewCell.swift */; };
 		EE9B12D22A56EF36002235B3 /* Publication.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9B12D12A56EF36002235B3 /* Publication.swift */; };
+		EE9B12D42A5C7327002235B3 /* NewsFeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9B12D32A5C7327002235B3 /* NewsFeedTableViewCell.swift */; };
+		EE9B12D62A5C8086002235B3 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9B12D52A5C8086002235B3 /* Users.swift */; };
+		EE9B12D82A603959002235B3 /* NewsFeedHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9B12D72A603959002235B3 /* NewsFeedHeader.swift */; };
+		EE9B12DA2A605276002235B3 /* StoriesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9B12D92A605276002235B3 /* StoriesTableViewCell.swift */; };
+		EE9B12DC2A6052AA002235B3 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9B12DB2A6052AA002235B3 /* Constants.swift */; };
 		EEB738E12A49E3B0001F8A1B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB738E02A49E3B0001F8A1B /* AppDelegate.swift */; };
 		EEB738E32A49E3B0001F8A1B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB738E22A49E3B0001F8A1B /* SceneDelegate.swift */; };
 		EEB738E52A49E3B0001F8A1B /* AuthorizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB738E42A49E3B0001F8A1B /* AuthorizationViewController.swift */; };
@@ -33,7 +38,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		EE9B12362A4C6E31002235B3 /* NewsFeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsFeedViewController.swift; sourceTree = "<group>"; };
+		EE9B12362A4C6E31002235B3 /* NewsFeedTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsFeedTableViewController.swift; sourceTree = "<group>"; };
 		EE9B123A2A4C6E89002235B3 /* MessengerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessengerViewController.swift; sourceTree = "<group>"; };
 		EE9B12962A4DBA38002235B3 /* TabBarBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarBuilder.swift; sourceTree = "<group>"; };
 		EE9B12982A4DBC07002235B3 /* FriendsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsTableViewController.swift; sourceTree = "<group>"; };
@@ -50,6 +55,11 @@
 		EE9B12B22A50A410002235B3 /* FriendCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendCollectionViewController.swift; sourceTree = "<group>"; };
 		EE9B12B42A50A44B002235B3 /* FriendCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendCollectionViewCell.swift; sourceTree = "<group>"; };
 		EE9B12D12A56EF36002235B3 /* Publication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Publication.swift; sourceTree = "<group>"; };
+		EE9B12D32A5C7327002235B3 /* NewsFeedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsFeedTableViewCell.swift; sourceTree = "<group>"; };
+		EE9B12D52A5C8086002235B3 /* Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
+		EE9B12D72A603959002235B3 /* NewsFeedHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsFeedHeader.swift; sourceTree = "<group>"; };
+		EE9B12D92A605276002235B3 /* StoriesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoriesTableViewCell.swift; sourceTree = "<group>"; };
+		EE9B12DB2A6052AA002235B3 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		EEB738DD2A49E3B0001F8A1B /* vk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = vk.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEB738E02A49E3B0001F8A1B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EEB738E22A49E3B0001F8A1B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -74,6 +84,8 @@
 		EE9B12A22A4DC119002235B3 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				EE9B12DB2A6052AA002235B3 /* Constants.swift */,
+				EE9B12A32A4DC12C002235B3 /* Group.swift */,
 				EE9B12A02A4DC0A8002235B3 /* User.swift */,
 				EE9B12D12A56EF36002235B3 /* Publication.swift */,
 				EE9B12A52A4EF55A002235B3 /* Community.swift */,
@@ -84,8 +96,10 @@
 		EE9B12A92A4EF88E002235B3 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				EE9B12D92A605276002235B3 /* StoriesTableViewCell.swift */,
 				EE9B12A72A4EF884002235B3 /* ContentItemTableViewCell.swift */,
 				EE9B12AA2A4EFAB8002235B3 /* UserCommunityTableViewCell.swift */,
+				EE9B12D32A5C7327002235B3 /* NewsFeedTableViewCell.swift */,
 				EE9B12AE2A4EFB8E002235B3 /* AvailableCommunityTableViewCell.swift */,
 				EE9B12AC2A4EFACD002235B3 /* FriendTableViewCell.swift */,
 				EE9B12B42A50A44B002235B3 /* FriendCollectionViewCell.swift */,
@@ -96,7 +110,6 @@
 		EEB738D42A49E3B0001F8A1B = {
 			isa = PBXGroup;
 			children = (
-				EE9B12A32A4DC12C002235B3 /* Group.swift */,
 				EEB738DF2A49E3B0001F8A1B /* vk */,
 				EEB738DE2A49E3B0001F8A1B /* Products */,
 			);
@@ -123,7 +136,9 @@
 				EE9B12B22A50A410002235B3 /* FriendCollectionViewController.swift */,
 				EE9B123A2A4C6E89002235B3 /* MessengerViewController.swift */,
 				EE9B129C2A4DBCD3002235B3 /* UserViewController.swift */,
-				EE9B12362A4C6E31002235B3 /* NewsFeedViewController.swift */,
+				EE9B12362A4C6E31002235B3 /* NewsFeedTableViewController.swift */,
+				EE9B12D52A5C8086002235B3 /* Users.swift */,
+				EE9B12D72A603959002235B3 /* NewsFeedHeader.swift */,
 				EE9B12A92A4EF88E002235B3 /* Cells */,
 				EE9B12A22A4DC119002235B3 /* Models */,
 				EEB738E92A49E3B1001F8A1B /* Assets.xcassets */,
@@ -205,6 +220,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EE9B12DC2A6052AA002235B3 /* Constants.swift in Sources */,
 				EE9B12A42A4DC12C002235B3 /* Group.swift in Sources */,
 				EE9B12A82A4EF884002235B3 /* ContentItemTableViewCell.swift in Sources */,
 				EE9B123B2A4C6E89002235B3 /* MessengerViewController.swift in Sources */,
@@ -215,16 +231,20 @@
 				EE9B129F2A4DBDE9002235B3 /* CommunitiesTableViewController.swift in Sources */,
 				EEB738E52A49E3B0001F8A1B /* AuthorizationViewController.swift in Sources */,
 				EE9B12AF2A4EFB8E002235B3 /* AvailableCommunityTableViewCell.swift in Sources */,
+				EE9B12D62A5C8086002235B3 /* Users.swift in Sources */,
 				EE9B12AB2A4EFAB8002235B3 /* UserCommunityTableViewCell.swift in Sources */,
 				EE9B12B32A50A410002235B3 /* FriendCollectionViewController.swift in Sources */,
 				EE9B12972A4DBA38002235B3 /* TabBarBuilder.swift in Sources */,
 				EE9B12992A4DBC07002235B3 /* FriendsTableViewController.swift in Sources */,
+				EE9B12D42A5C7327002235B3 /* NewsFeedTableViewCell.swift in Sources */,
+				EE9B12D82A603959002235B3 /* NewsFeedHeader.swift in Sources */,
+				EE9B12DA2A605276002235B3 /* StoriesTableViewCell.swift in Sources */,
 				EEB738E12A49E3B0001F8A1B /* AppDelegate.swift in Sources */,
 				EEB738E32A49E3B0001F8A1B /* SceneDelegate.swift in Sources */,
 				EE9B12AD2A4EFACD002235B3 /* FriendTableViewCell.swift in Sources */,
 				EE9B12A12A4DC0A8002235B3 /* User.swift in Sources */,
 				EE9B12B52A50A44B002235B3 /* FriendCollectionViewCell.swift in Sources */,
-				EE9B12372A4C6E31002235B3 /* NewsFeedViewController.swift in Sources */,
+				EE9B12372A4C6E31002235B3 /* NewsFeedTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
