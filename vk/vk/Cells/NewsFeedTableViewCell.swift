@@ -105,7 +105,12 @@ final class NewsFeedTableViewCell: UITableViewCell {
         likesButton.translatesAutoresizingMaskIntoConstraints = false
         likesButton.backgroundColor = grayColor.withAlphaComponent(0.2)
         likesButton.layer.cornerRadius = 18
-        likesButton.setImage(UIImage(systemName: "heart", withConfiguration: UIImage.SymbolConfiguration(scale: .large))?.withTintColor(grayColor, renderingMode: .alwaysOriginal), for: .normal)
+        likesButton.setImage(
+            UIImage(systemName: "heart",
+            withConfiguration: UIImage.SymbolConfiguration(scale: .large))?.withTintColor(grayColor,
+            renderingMode: .alwaysOriginal),
+            for: .normal
+        )
         likesButton.setImage(UIImage(systemName: "heart.fill", withConfiguration: UIImage.SymbolConfiguration(scale: .large))?.withTintColor(.systemRed, renderingMode: .alwaysOriginal), for: .selected)
         likesButton.imageEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 10)
         likesButton.addTarget(self, action: #selector(like(_:)), for: .touchUpInside)
@@ -178,7 +183,12 @@ final class NewsFeedTableViewCell: UITableViewCell {
             repostButton.translatesAutoresizingMaskIntoConstraints = false
             repostButton.backgroundColor = grayColor.withAlphaComponent(0.2)
             repostButton.layer.cornerRadius = 18
-            repostButton.setImage(UIImage(systemName: "arrowshape.turn.up.right", withConfiguration: UIImage.SymbolConfiguration(scale: .large))?.withTintColor(grayColor, renderingMode: .alwaysOriginal), for: .normal)
+            repostButton.setImage(
+                UIImage(systemName: "arrowshape.turn.up.right",
+                withConfiguration: UIImage.SymbolConfiguration(scale: .large))?.withTintColor(grayColor,
+                renderingMode: .alwaysOriginal),
+                for: .normal
+            )
             NSLayoutConstraint.activate([
                 repostButton.leadingAnchor.constraint(equalTo: commentsButton.trailingAnchor, constant: 5),
                 repostButton.topAnchor.constraint(equalTo: likesButton.topAnchor),
@@ -192,13 +202,30 @@ final class NewsFeedTableViewCell: UITableViewCell {
         if likesButton.isSelected == false {
             likesButton.isSelected = true
             likeCount += 1
-            likesButton.setAttributedTitle(NSAttributedString(string: String(likeCount), attributes: [.font: UIFont.systemFont(ofSize: 15, weight: .medium), .foregroundColor: UIColor.systemRed]), for: .selected)
+            likesButton.setAttributedTitle(
+                NSAttributedString(string: String(likeCount),
+                attributes: [.font: UIFont.systemFont(ofSize: 15,
+                weight: .medium),
+                .foregroundColor: UIColor.systemRed]),
+                for: .selected
+            )
             likesButton.backgroundColor = .systemRed.withAlphaComponent(0.2)
+            UIView.animate(withDuration: 0.4, delay: 0, options: .autoreverse, animations: {
+                likesButton.imageView?.transform = (likesButton.imageView?.transform.scaledBy(x: 1.3, y: 1.3))!
+            }, completion: { _ in
+                likesButton.imageView?.transform = .identity
+            })
         } else {
             likesButton.isSelected = false
             likeCount -= 1
             likesButton.backgroundColor = grayColor.withAlphaComponent(0.2)
-            likesButton.setAttributedTitle(NSAttributedString(string: String(likeCount), attributes: [.font: UIFont.systemFont(ofSize: 15, weight: .medium), .foregroundColor: grayColor]), for: .normal)
+            likesButton.setAttributedTitle(
+                NSAttributedString(string: String(likeCount),
+                attributes: [.font: UIFont.systemFont(ofSize: 15,
+                weight: .medium),
+                .foregroundColor: grayColor]),
+                for: .normal
+            )
         }
     }
     
@@ -211,11 +238,23 @@ final class NewsFeedTableViewCell: UITableViewCell {
         likeCount = publication.likeCount
         if publication.isLiked == true {
             likesButton.isSelected = true
-            likesButton.setAttributedTitle(NSAttributedString(string: String(likeCount), attributes: [.font: UIFont.systemFont(ofSize: 15, weight: .medium), .foregroundColor: UIColor.systemRed]), for: .selected)
+            likesButton.setAttributedTitle(
+                NSAttributedString(string: String(likeCount),
+                attributes: [.font: UIFont.systemFont(ofSize: 15,
+                weight: .medium),
+                .foregroundColor: UIColor.systemRed]),
+                for: .selected
+            )
             likesButton.backgroundColor = .systemRed.withAlphaComponent(0.2)
         } else {
             likesButton.isSelected = false
-            likesButton.setAttributedTitle(NSAttributedString(string: String(likeCount), attributes: [.font: UIFont.systemFont(ofSize: 15, weight: .medium), .foregroundColor: grayColor]), for: .normal)
+            likesButton.setAttributedTitle(
+                NSAttributedString(string: String(likeCount),
+                attributes: [.font: UIFont.systemFont(ofSize: 15,
+                weight: .medium),
+                .foregroundColor: grayColor]),
+                for: .normal
+            )
             likesButton.backgroundColor = grayColor.withAlphaComponent(0.2)
         }
         

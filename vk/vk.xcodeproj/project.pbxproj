@@ -35,6 +35,8 @@
 		EEB738E82A49E3B0001F8A1B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EEB738E62A49E3B0001F8A1B /* Main.storyboard */; };
 		EEB738EA2A49E3B1001F8A1B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EEB738E92A49E3B1001F8A1B /* Assets.xcassets */; };
 		EEB738ED2A49E3B1001F8A1B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EEB738EB2A49E3B1001F8A1B /* LaunchScreen.storyboard */; };
+		EED03A682A62E53C000A3196 /* LaunchScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED03A672A62E53C000A3196 /* LaunchScreenViewController.swift */; };
+		EED03A6A2A62E7C1000A3196 /* Circle.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED03A692A62E7C1000A3196 /* Circle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +70,8 @@
 		EEB738E92A49E3B1001F8A1B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EEB738EC2A49E3B1001F8A1B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EEB738EE2A49E3B1001F8A1B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EED03A672A62E53C000A3196 /* LaunchScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenViewController.swift; sourceTree = "<group>"; };
+		EED03A692A62E7C1000A3196 /* Circle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Circle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +141,8 @@
 				EE9B123A2A4C6E89002235B3 /* MessengerViewController.swift */,
 				EE9B129C2A4DBCD3002235B3 /* UserViewController.swift */,
 				EE9B12362A4C6E31002235B3 /* NewsFeedTableViewController.swift */,
+				EED03A672A62E53C000A3196 /* LaunchScreenViewController.swift */,
+				EED03A692A62E7C1000A3196 /* Circle.swift */,
 				EE9B12D52A5C8086002235B3 /* Users.swift */,
 				EE9B12D72A603959002235B3 /* NewsFeedHeader.swift */,
 				EE9B12A92A4EF88E002235B3 /* Cells */,
@@ -234,11 +240,13 @@
 				EE9B12D62A5C8086002235B3 /* Users.swift in Sources */,
 				EE9B12AB2A4EFAB8002235B3 /* UserCommunityTableViewCell.swift in Sources */,
 				EE9B12B32A50A410002235B3 /* FriendCollectionViewController.swift in Sources */,
+				EED03A682A62E53C000A3196 /* LaunchScreenViewController.swift in Sources */,
 				EE9B12972A4DBA38002235B3 /* TabBarBuilder.swift in Sources */,
 				EE9B12992A4DBC07002235B3 /* FriendsTableViewController.swift in Sources */,
 				EE9B12D42A5C7327002235B3 /* NewsFeedTableViewCell.swift in Sources */,
 				EE9B12D82A603959002235B3 /* NewsFeedHeader.swift in Sources */,
 				EE9B12DA2A605276002235B3 /* StoriesTableViewCell.swift in Sources */,
+				EED03A6A2A62E7C1000A3196 /* Circle.swift in Sources */,
 				EEB738E12A49E3B0001F8A1B /* AppDelegate.swift in Sources */,
 				EEB738E32A49E3B0001F8A1B /* SceneDelegate.swift in Sources */,
 				EE9B12AD2A4EFACD002235B3 /* FriendTableViewCell.swift in Sources */,

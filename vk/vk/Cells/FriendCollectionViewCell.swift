@@ -72,8 +72,17 @@ final class FriendCollectionViewCell: UICollectionViewCell {
         if likeButton.isSelected == false {
             likeButton.isSelected = true
             likeCount += 1
-            likeCountLabel.text = "\(likeCount)"
-            likeCountLabel.textColor = .red
+            UIView.animate(
+                withDuration: 0.5, delay: 0, options: .autoreverse,
+                animations: {
+                self.likeCountLabel.text = "\(self.likeCount)"
+                self.likeCountLabel.textColor = .red
+                self.likeCountLabel.transform = self.likeCountLabel.transform.scaledBy(x: 1.2, y: 1.2)
+                self.likeButton.transform = self.likeButton.transform.scaledBy(x: 1.2, y: 1.2)
+            }, completion: {_ in
+                self.likeCountLabel.transform = .identity
+                self.likeButton.transform = .identity
+            })
         } else {
             likeButton.isSelected = false
             likeCount -= 1

@@ -38,15 +38,21 @@ final class FriendsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: FriendTableViewCell.identifier) as! FriendTableViewCell
         let friend = sortedFriends[indexPath.section][indexPath.row]
-        if friend.age != "" {
+        if friend.age != "" && friend.city != "" {
             cell.configure(
                 with: friend.surname + " " + friend.name,
                 description: friend.age + " лет, " + friend.city,
                 avatar: friend.avatar
             )
+        } else if friend.age != "" {
+            cell.configure(
+                with: friend.surname + " " + friend.name,
+                description: friend.age + " лет",
+                avatar: friend.avatar
+            )
         } else {
             cell.configure(
-                with: friend.name + friend.surname,
+                with: friend.surname + " " + friend.name,
                 description: friend.age + friend.city,
                 avatar: friend.avatar
             )
