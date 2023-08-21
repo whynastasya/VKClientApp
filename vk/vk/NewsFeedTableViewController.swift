@@ -11,34 +11,47 @@ final class NewsFeedTableViewController: UITableViewController {
     
     private let publications = [
            Publication(
-               user: User(surname: "Котов", name: "Димулик", avatar: "Димулик", publications: []),
-               photo: "Димулик_1", date: "вчера в 22:34",
-               isLiked: false, likeCount: 10,
-               commentCount: 5, viewerCount: 39),
-           Publication(user: User(surname: "Григорчук", name: "Настасья", avatar: "Димулик", publications: []),
-               photo: "Димулик_2", date: "час назад",
-               isLiked: true, likeCount: 45,
-               commentCount: 2, viewerCount: 189),
-           Publication(user: User(surname: "Тёплый", name: "Антон", avatar: "Димулик", publications: []),
-               photo: "Димулик_3", date: "два часа назад",
-               isLiked: false, likeCount: 3,
-               commentCount: 0, viewerCount: 39),
-           Publication(user: User(surname: "Рзаев", name: "Руслан", avatar: "Димулик", publications: []),
-               photo: "Димулик_4", date: "вчера в 22:34",
-               isLiked: false, likeCount: 23,
-               commentCount: 52, viewerCount: 560),
-           Publication(user: User(surname: "Лопиталь", name: "Бальжина", avatar: "Димулик", publications: []),
-               photo: "Димулик_5", date: "сегодня в 02:51",
-               isLiked: false, likeCount: 122,
-               commentCount: 9, viewerCount: 189),
-           Publication(user: User(surname: "Еленский", name: "Эдуард", avatar: "Димулик", publications: []),
-               photo: "Димулик_6", date: "вчера в 22:34",
-               isLiked: true, likeCount: 10,
-               commentCount: 5, viewerCount: 39),
-           Publication(user: User(surname: "Стриж", name: "Иван", avatar: "Димулик", publications: []),
-               photo: "Димулик_7", date: "вчера в 22:34",
-               isLiked: true, likeCount: 10,
-               commentCount: 5, viewerCount: 39)
+            user: User(surname: "Котов", name: "Димулик", avatar: "Димулик", publications: []),
+            photos: ["Димулик_1", "Димулик_2", "Димулик_3", "Димулик_4", "Димулик_5", "Димулик_6", "Димулик_7"],
+            date: "вчера в 22:34",
+            isLiked: false, likeCount: 10,
+            commentCount: 5, viewerCount: 39),
+           Publication(
+            user: User(surname: "Григорчук", name: "Настасья", avatar: "Димулик", publications: []),
+            photos: ["Димулик_1", "Димулик_2", "Димулик_3", "Димулик_4", "Димулик_5", "Димулик_6", "Димулик_7"],
+            date: "час назад",
+            isLiked: true, likeCount: 45,
+            commentCount: 2, viewerCount: 189),
+           Publication(
+            user: User(surname: "Тёплый", name: "Антон", avatar: "Димулик", publications: []),
+            photos: ["Димулик_1", "Димулик_2", "Димулик_3", "Димулик_4", "Димулик_5", "Димулик_6", "Димулик_7"],
+            date: "два часа назад",
+            isLiked: false, likeCount: 3,
+            commentCount: 0, viewerCount: 39),
+           Publication(
+            user: User(surname: "Рзаев", name: "Руслан", avatar: "Димулик", publications: []),
+            photos: ["Димулик_1", "Димулик_2", "Димулик_3", "Димулик_4", "Димулик_5", "Димулик_6", "Димулик_7"],
+            date: "вчера в 22:34",
+            isLiked: false, likeCount: 23,
+            commentCount: 52, viewerCount: 560),
+           Publication(
+            user: User(surname: "Лопиталь", name: "Бальжина", avatar: "Димулик", publications: []),
+            photos: ["Димулик_1", "Димулик_2", "Димулик_3", "Димулик_4", "Димулик_5", "Димулик_6", "Димулик_7"],
+            date: "сегодня в 02:51",
+            isLiked: false, likeCount: 122,
+            commentCount: 9, viewerCount: 189),
+           Publication(
+            user: User(surname: "Еленский", name: "Эдуард", avatar: "Димулик", publications: []),
+            photos: ["Димулик_1", "Димулик_2", "Димулик_3", "Димулик_4", "Димулик_5", "Димулик_6", "Димулик_7"],
+            date: "вчера в 22:34",
+            isLiked: true, likeCount: 10,
+            commentCount: 5, viewerCount: 39),
+           Publication(
+            user: User(surname: "Стриж", name: "Иван", avatar: "Димулик", publications: []),
+            photos: ["Димулик_1", "Димулик_2", "Димулик_3", "Димулик_4", "Димулик_5", "Димулик_6", "Димулик_7"],
+            date: "вчера в 22:34",
+            isLiked: true, likeCount: 10,
+            commentCount: 5, viewerCount: 39)
     ]
     
     private var users = [

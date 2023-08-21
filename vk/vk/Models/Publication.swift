@@ -9,7 +9,7 @@ import Foundation
 
 struct Publication {
     let user: User
-    let photo: String
+    let photos: [String]
     let date: String
     let isLiked: Bool
     let likeCount: Int

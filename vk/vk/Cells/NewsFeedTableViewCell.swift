@@ -15,12 +15,14 @@ final class NewsFeedTableViewCell: UITableViewCell {
     private let userAvatar = UIImageView()
     private let userName = UILabel()
     private let dateLabel = UILabel()
+    private let photoView = UIView()
     private let photoImageView = UIImageView()
     private let likesButton = UIButton()
     private let commentsButton = UIButton()
     private let viewersLabel = UILabel()
     private let grayColor = UIColor.gray
     private var likeCount = 0
+    private var photoImages = [UIImage]()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -89,15 +91,49 @@ final class NewsFeedTableViewCell: UITableViewCell {
     }
     
     private func setupPhotoImageView() {
-        backgroundSqureView.addSubview(photoImageView)
+        backgroundSqureView.addSubview(photoView)
+        photoView.translatesAutoresizingMaskIntoConstraints = false
+        photoView.addSubview(photoImageView)
         photoImageView.translatesAutoresizingMaskIntoConstraints = false
         photoImageView.contentMode = .scaleToFill
         NSLayoutConstraint.activate([
-            photoImageView.leadingAnchor.constraint(equalTo: backgroundSqureView.leadingAnchor),
-            photoImageView.trailingAnchor.constraint(equalTo: backgroundSqureView.trailingAnchor),
-            photoImageView.topAnchor.constraint(equalTo: userAvatar.bottomAnchor, constant: 10),
-            photoImageView.heightAnchor.constraint(equalTo: backgroundSqureView.widthAnchor)
+            photoView.leadingAnchor.constraint(equalTo: backgroundSqureView.leadingAnchor),
+            photoView.trailingAnchor.constraint(equalTo: backgroundSqureView.trailingAnchor),
+            photoView.topAnchor.constraint(equalTo: userAvatar.bottomAnchor, constant: 10),
+            photoView.heightAnchor.constraint(equalTo: backgroundSqureView.widthAnchor),
+            
+            photoImageView.leadingAnchor.constraint(equalTo: photoView.leadingAnchor),
+            photoImageView.trailingAnchor.constraint(equalTo: photoView.trailingAnchor),
+            photoImageView.topAnchor.constraint(equalTo: photoView.topAnchor),
+            photoImageView.bottomAnchor.constraint(equalTo: photoView.bottomAnchor)
         ])
+        let leftSwipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(leftSwipePhoto))
+        leftSwipeGestureRecognizer.direction = .left
+        photoView.addGestureRecognizer(leftSwipeGestureRecognizer)
+        let rightSwipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(rightSwipePhoto))
+        rightSwipeGestureRecognizer.direction = .right
+        photoView.addGestureRecognizer(rightSwipeGestureRecognizer)
+    }
+    
+    @objc func leftSwipePhoto() {
+        let index = (photoImages.firstIndex(of: photoImageView.image!))!
+        UIView.animate(withDuration: 2, delay: 0, options: .curveLinear, animations: {
+            if index < self.photoImages.count - 1 {
+                self.photoImageView.image = self.photoImages[index + 1]
+                self.photoImageView.image
+            } else {
+                self.photoImageView.image = self.photoImages[0]
+            }
+        })
+    }
+    
+    @objc func rightSwipePhoto() {
+        let index = (photoImages.firstIndex(of: photoImageView.image!))!
+        if index > 0 {
+            photoImageView.image = photoImages[index - 1]
+        } else {
+            photoImageView.image = photoImages[photoImages.count - 1]
+        }
     }
     
     private func setupLikesButton() {
@@ -113,7 +149,7 @@ final class NewsFeedTableViewCell: UITableViewCell {
         )
         likesButton.setImage(UIImage(systemName: "heart.fill", withConfiguration: UIImage.SymbolConfiguration(scale: .large))?.withTintColor(.systemRed, renderingMode: .alwaysOriginal), for: .selected)
         likesButton.imageEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 10)
-        likesButton.addTarget(self, action: #selector(like(_:)), for: .touchUpInside)
+        likesButton.addTarget(self, action: #selector(like), for: .touchUpInside)
         NSLayoutConstraint.activate([
             likesButton.leadingAnchor.constraint(equalTo: userAvatar.leadingAnchor),
             likesButton.topAnchor.constraint(equalTo: photoImageView.bottomAnchor, constant: 8),
@@ -198,22 +234,22 @@ final class NewsFeedTableViewCell: UITableViewCell {
         }
     }
     
-    @objc func like(_ likesButton: UIButton) {
+    @objc func like() {
         if likesButton.isSelected == false {
-            likesButton.isSelected = true
-            likeCount += 1
-            likesButton.setAttributedTitle(
-                NSAttributedString(string: String(likeCount),
-                attributes: [.font: UIFont.systemFont(ofSize: 15,
-                weight: .medium),
-                .foregroundColor: UIColor.systemRed]),
-                for: .selected
-            )
             likesButton.backgroundColor = .systemRed.withAlphaComponent(0.2)
             UIView.animate(withDuration: 0.4, delay: 0, options: .autoreverse, animations: {
-                likesButton.imageView?.transform = (likesButton.imageView?.transform.scaledBy(x: 1.3, y: 1.3))!
+                self.likesButton.imageView?.transform = (self.likesButton.imageView?.transform.scaledBy(x: 1.3, y: 1.3))!
+                self.likesButton.isSelected = true
+                self.likeCount += 1
+                self.likesButton.setAttributedTitle(
+                    NSAttributedString(string: String(self.likeCount),
+                    attributes: [.font: UIFont.systemFont(ofSize: 15,
+                    weight: .medium),
+                    .foregroundColor: UIColor.systemRed]),
+                    for: .selected
+                )
             }, completion: { _ in
-                likesButton.imageView?.transform = .identity
+                self.likesButton.imageView?.transform = .identity
             })
         } else {
             likesButton.isSelected = false
@@ -233,7 +269,13 @@ final class NewsFeedTableViewCell: UITableViewCell {
         userAvatar.image = UIImage(named: publication.user.avatar)
         userName.text = publication.user.surname + " " + publication.user.name
         dateLabel.text = publication.date
-        photoImageView.image = UIImage(named: publication.photo)
+        photoImageView.image = UIImage(named: publication.photos[0])
+        for photo in publication.photos {
+            photoImages.append((UIImage(named: photo))!)
+        }
+//        photoImageView.animationImages = photoImages
+//        photoImageView.animationDuration = 10
+//        photoImageView.startAnimating()
         
         likeCount = publication.likeCount
         if publication.isLiked == true {
