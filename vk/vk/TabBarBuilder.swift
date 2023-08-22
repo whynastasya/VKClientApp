@@ -10,9 +10,8 @@ import UIKit
 
 final class TabBarBuilder {
     static func createTabBarController() -> UITabBarController {
-        let newsFeedviewController = UINavigationController(rootViewController: NewsFeedTableViewController())
-        newsFeedviewController.tabBarItem.image = UIImage(systemName: "house")
-//        newsFeedviewController.hidesBarsOnSwipe = true
+        let newsFeedViewController = UINavigationController(rootViewController: NewsFeedTableViewController())
+        newsFeedViewController.tabBarItem.image = UIImage(systemName: "house")
 
         let groupsViewController = UINavigationController(rootViewController: CommunitiesTableViewController())
         groupsViewController.tabBarItem.image = UIImage(systemName: "squareshape.split.2x2")
@@ -31,7 +30,7 @@ final class TabBarBuilder {
         tabBarController.tabBar.unselectedItemTintColor = .gray
         tabBarController.tabBar.backgroundColor = .black
         tabBarController.tabBar.isTranslucent = false
-        tabBarController.setViewControllers([newsFeedviewController, groupsViewController, messengerViewController, friendsViewController, userViewController], animated: true)
+        tabBarController.setViewControllers([newsFeedViewController, groupsViewController, messengerViewController, friendsViewController, userViewController], animated: true)
         
         return tabBarController
     }

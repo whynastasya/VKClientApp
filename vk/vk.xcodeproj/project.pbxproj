@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EE4A5A792A951C08002D12BD /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4A5A782A951C08002D12BD /* Session.swift */; };
 		EE9B12372A4C6E31002235B3 /* NewsFeedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9B12362A4C6E31002235B3 /* NewsFeedTableViewController.swift */; };
 		EE9B123B2A4C6E89002235B3 /* MessengerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9B123A2A4C6E89002235B3 /* MessengerViewController.swift */; };
 		EE9B12972A4DBA38002235B3 /* TabBarBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9B12962A4DBA38002235B3 /* TabBarBuilder.swift */; };
@@ -40,6 +41,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EE4A5A782A951C08002D12BD /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		EE9B12362A4C6E31002235B3 /* NewsFeedTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsFeedTableViewController.swift; sourceTree = "<group>"; };
 		EE9B123A2A4C6E89002235B3 /* MessengerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessengerViewController.swift; sourceTree = "<group>"; };
 		EE9B12962A4DBA38002235B3 /* TabBarBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarBuilder.swift; sourceTree = "<group>"; };
@@ -85,6 +87,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EE4A5A7A2A951D13002D12BD /* VKAPIService */ = {
+			isa = PBXGroup;
+			children = (
+				EE4A5A782A951C08002D12BD /* Session.swift */,
+			);
+			path = VKAPIService;
+			sourceTree = "<group>";
+		};
 		EE9B12A22A4DC119002235B3 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -100,6 +110,7 @@
 		EE9B12A92A4EF88E002235B3 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				EE9B12D72A603959002235B3 /* NewsFeedHeader.swift */,
 				EE9B12D92A605276002235B3 /* StoriesTableViewCell.swift */,
 				EE9B12A72A4EF884002235B3 /* ContentItemTableViewCell.swift */,
 				EE9B12AA2A4EFAB8002235B3 /* UserCommunityTableViewCell.swift */,
@@ -130,6 +141,7 @@
 		EEB738DF2A49E3B0001F8A1B /* vk */ = {
 			isa = PBXGroup;
 			children = (
+				EE4A5A7A2A951D13002D12BD /* VKAPIService */,
 				EEB738E02A49E3B0001F8A1B /* AppDelegate.swift */,
 				EEB738E22A49E3B0001F8A1B /* SceneDelegate.swift */,
 				EE9B12962A4DBA38002235B3 /* TabBarBuilder.swift */,
@@ -144,7 +156,6 @@
 				EED03A672A62E53C000A3196 /* LaunchScreenViewController.swift */,
 				EED03A692A62E7C1000A3196 /* Circle.swift */,
 				EE9B12D52A5C8086002235B3 /* Users.swift */,
-				EE9B12D72A603959002235B3 /* NewsFeedHeader.swift */,
 				EE9B12A92A4EF88E002235B3 /* Cells */,
 				EE9B12A22A4DC119002235B3 /* Models */,
 				EEB738E92A49E3B1001F8A1B /* Assets.xcassets */,
@@ -226,6 +237,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EE4A5A792A951C08002D12BD /* Session.swift in Sources */,
 				EE9B12DC2A6052AA002235B3 /* Constants.swift in Sources */,
 				EE9B12A42A4DC12C002235B3 /* Group.swift in Sources */,
 				EE9B12A82A4EF884002235B3 /* ContentItemTableViewCell.swift in Sources */,
@@ -405,6 +417,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -433,6 +446,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (

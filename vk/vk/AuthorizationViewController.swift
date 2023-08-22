@@ -33,7 +33,7 @@ final class AuthorizationViewController: UIViewController {
         ]
         view.keyboardLayoutGuide.setConstraints(nearBottomConstraints, activeWhenNearEdge: .top)
         navigationController?.hidesBarsOnSwipe = true
-        navigationController?.navigationBar.isTranslucent = false
+        navigationController?.navigationBar.isTranslucent = true
     }
     
     private func setupLogoImageView() {
@@ -185,7 +185,7 @@ final class AuthorizationViewController: UIViewController {
         let tabBar = TabBarBuilder.createTabBarController()
         tabBar.tabBar.backgroundColor = .darkGray.withAlphaComponent(0.3)
         tabBar.modalPresentationStyle = .fullScreen
-        show(tabBar, sender: self)
+        present(tabBar, animated: true)
     }
     
     @objc func hideKeyboard(_: UIView) {

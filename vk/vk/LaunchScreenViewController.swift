@@ -26,7 +26,7 @@ final class LaunchScreenViewController: UIViewController {
     }
     
     private func animate() {
-        UIView.animate(withDuration: 0, delay: 0, options: [.autoreverse], animations: { [self] in
+        UIView.animate(withDuration: 5, delay: 0, options: [.autoreverse], animations: { [self] in
             circles[0].alpha = 0.4
             circles[2].alpha = 1
         }, completion: { [self] _ in

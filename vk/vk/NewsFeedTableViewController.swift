@@ -64,8 +64,6 @@ final class NewsFeedTableViewController: UITableViewController {
         User(surname: "Стриж", name: "Иван", avatar: "Димулик", publications: [])
     ]
     
-    private let headerView = NewsFeedHeader(frame: .zero)
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .black
@@ -92,6 +90,11 @@ final class NewsFeedTableViewController: UITableViewController {
         titleLabel.font = UIFont.systemFont(ofSize: 27, weight: .bold)
         titleLabel.textColor = .white
         
+        let segmentedControl = UISegmentedControl()
+        titleView.addSubview(segmentedControl)
+        segmentedControl.backgroundColor = .purple
+        segmentedControl.translatesAutoresizingMaskIntoConstraints = false
+        
         NSLayoutConstraint.activate([
             userAvatar.leadingAnchor.constraint(equalTo: titleView.leadingAnchor),
             userAvatar.bottomAnchor.constraint(equalTo: titleView.bottomAnchor, constant: 15),
@@ -99,27 +102,21 @@ final class NewsFeedTableViewController: UITableViewController {
             userAvatar.heightAnchor.constraint(equalTo: userAvatar.widthAnchor, multiplier: 1),
             
             titleLabel.leadingAnchor.constraint(equalTo: userAvatar.trailingAnchor, constant: 15),
-            titleLabel.centerYAnchor.constraint(equalTo: titleView.centerYAnchor)
+            titleLabel.centerYAnchor.constraint(equalTo: titleView.centerYAnchor),
+            
+            segmentedControl.topAnchor.constraint(equalTo: titleLabel.bottomAnchor),
+            segmentedControl.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor)
+            
         ])
-        
+        titleView.backgroundColor = .purple
         navigationItem.leftBarButtonItem = UIBarButtonItem(customView: titleView)
-        navigationController?.navigationBar.backgroundColor = .clear
+        navigationController?.navigationBar.backgroundColor = .black
         navigationController?.navigationBar.isTranslucent = false
         navigationItem.rightBarButtonItems = [
             UIBarButtonItem(image: UIImage(systemName: "bell", withConfiguration: UIImage.SymbolConfiguration(scale: .large))?.withTintColor(.white, renderingMode: .alwaysOriginal), style: .done, target: self, action: nil),
             UIBarButtonItem(image: UIImage(systemName: "magnifyingglass", withConfiguration: UIImage.SymbolConfiguration(scale: .large))?.withTintColor(.white, renderingMode: .alwaysOriginal), style: .done, target: self, action: nil),
             UIBarButtonItem(image: UIImage(systemName: "plus.circle", withConfiguration: UIImage.SymbolConfiguration(scale: .large))?.withTintColor(.white, renderingMode: .alwaysOriginal), style: .done, target: self, action: nil)
         ]
-    }
-    
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        1
-    }
-    
-    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        
-        headerView.backgroundColor = .black
-        return headerView
     }
     
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
