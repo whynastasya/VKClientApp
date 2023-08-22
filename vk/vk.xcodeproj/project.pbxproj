@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EE4A5A792A951C08002D12BD /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4A5A782A951C08002D12BD /* Session.swift */; };
 		EE9B12372A4C6E31002235B3 /* NewsFeedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9B12362A4C6E31002235B3 /* NewsFeedTableViewController.swift */; };
 		EE9B123B2A4C6E89002235B3 /* MessengerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9B123A2A4C6E89002235B3 /* MessengerViewController.swift */; };
 		EE9B12972A4DBA38002235B3 /* TabBarBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9B12962A4DBA38002235B3 /* TabBarBuilder.swift */; };
@@ -40,6 +41,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EE4A5A782A951C08002D12BD /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		EE9B12362A4C6E31002235B3 /* NewsFeedTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsFeedTableViewController.swift; sourceTree = "<group>"; };
 		EE9B123A2A4C6E89002235B3 /* MessengerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessengerViewController.swift; sourceTree = "<group>"; };
 		EE9B12962A4DBA38002235B3 /* TabBarBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarBuilder.swift; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 		EEB738D42A49E3B0001F8A1B = {
 			isa = PBXGroup;
 			children = (
+				EE4A5A782A951C08002D12BD /* Session.swift */,
 				EEB738DF2A49E3B0001F8A1B /* vk */,
 				EEB738DE2A49E3B0001F8A1B /* Products */,
 			);
@@ -226,6 +229,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EE4A5A792A951C08002D12BD /* Session.swift in Sources */,
 				EE9B12DC2A6052AA002235B3 /* Constants.swift in Sources */,
 				EE9B12A42A4DC12C002235B3 /* Group.swift in Sources */,
 				EE9B12A82A4EF884002235B3 /* ContentItemTableViewCell.swift in Sources */,
