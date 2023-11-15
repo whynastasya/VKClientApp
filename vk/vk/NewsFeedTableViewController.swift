@@ -9,60 +9,60 @@ import UIKit
 
 final class NewsFeedTableViewController: UITableViewController {
     
-    private let publications = [
-           Publication(
-            user: User(surname: "Котов", name: "Димулик", avatar: "Димулик", publications: []),
-            photos: ["Димулик_1", "Димулик_2", "Димулик_3", "Димулик_4", "Димулик_5", "Димулик_6", "Димулик_7"],
-            date: "вчера в 22:34",
-            isLiked: false, likeCount: 10,
-            commentCount: 5, viewerCount: 39),
-           Publication(
-            user: User(surname: "Григорчук", name: "Настасья", avatar: "Димулик", publications: []),
-            photos: ["Димулик_1", "Димулик_2", "Димулик_3", "Димулик_4", "Димулик_5", "Димулик_6", "Димулик_7"],
-            date: "час назад",
-            isLiked: true, likeCount: 45,
-            commentCount: 2, viewerCount: 189),
-           Publication(
-            user: User(surname: "Тёплый", name: "Антон", avatar: "Димулик", publications: []),
-            photos: ["Димулик_1", "Димулик_2", "Димулик_3", "Димулик_4", "Димулик_5", "Димулик_6", "Димулик_7"],
-            date: "два часа назад",
-            isLiked: false, likeCount: 3,
-            commentCount: 0, viewerCount: 39),
-           Publication(
-            user: User(surname: "Рзаев", name: "Руслан", avatar: "Димулик", publications: []),
-            photos: ["Димулик_1", "Димулик_2", "Димулик_3", "Димулик_4", "Димулик_5", "Димулик_6", "Димулик_7"],
-            date: "вчера в 22:34",
-            isLiked: false, likeCount: 23,
-            commentCount: 52, viewerCount: 560),
-           Publication(
-            user: User(surname: "Лопиталь", name: "Бальжина", avatar: "Димулик", publications: []),
-            photos: ["Димулик_1", "Димулик_2", "Димулик_3", "Димулик_4", "Димулик_5", "Димулик_6", "Димулик_7"],
-            date: "сегодня в 02:51",
-            isLiked: false, likeCount: 122,
-            commentCount: 9, viewerCount: 189),
-           Publication(
-            user: User(surname: "Еленский", name: "Эдуард", avatar: "Димулик", publications: []),
-            photos: ["Димулик_1", "Димулик_2", "Димулик_3", "Димулик_4", "Димулик_5", "Димулик_6", "Димулик_7"],
-            date: "вчера в 22:34",
-            isLiked: true, likeCount: 10,
-            commentCount: 5, viewerCount: 39),
-           Publication(
-            user: User(surname: "Стриж", name: "Иван", avatar: "Димулик", publications: []),
-            photos: ["Димулик_1", "Димулик_2", "Димулик_3", "Димулик_4", "Димулик_5", "Димулик_6", "Димулик_7"],
-            date: "вчера в 22:34",
-            isLiked: true, likeCount: 10,
-            commentCount: 5, viewerCount: 39)
-    ]
-    
-    private var users = [
-        User(surname: "Котов", name: "Димулик", avatar: "Димулик", publications: []),
-        User(surname: "Григорчук", name: "Настасья", avatar: "Димулик", publications: []),
-        User(surname: "Тёплый", name: "Антон", avatar: "Димулик", publications: []),
-        User(surname: "Рзаев", name: "Руслан", avatar: "Димулик", publications: []),
-        User(surname: "Лопиталь", name: "Бальжина", avatar: "Димулик", publications: []),
-        User(surname: "Еленский", name: "Эдуард", avatar: "Димулик", publications: []),
-        User(surname: "Стриж", name: "Иван", avatar: "Димулик", publications: [])
-    ]
+//    private let publications = [
+//           Publication(
+//            user: Friend(surname: "Котов", name: "Димулик", avatar: "Димулик", publications: []),
+//            photos: ["Димулик_1", "Димулик_2", "Димулик_3", "Димулик_4", "Димулик_5", "Димулик_6", "Димулик_7"],
+//            date: "вчера в 22:34",
+//            isLiked: false, likeCount: 10,
+//            commentCount: 5, viewerCount: 39),
+//           Publication(
+//            user: Friend(surname: "Григорчук", name: "Настасья", avatar: "Димулик", publications: []),
+//            photos: ["Димулик_1", "Димулик_2", "Димулик_3", "Димулик_4", "Димулик_5", "Димулик_6", "Димулик_7"],
+//            date: "час назад",
+//            isLiked: true, likeCount: 45,
+//            commentCount: 2, viewerCount: 189),
+//           Publication(
+//            user: Friend(surname: "Тёплый", name: "Антон", avatar: "Димулик", publications: []),
+//            photos: ["Димулик_1", "Димулик_2", "Димулик_3", "Димулик_4", "Димулик_5", "Димулик_6", "Димулик_7"],
+//            date: "два часа назад",
+//            isLiked: false, likeCount: 3,
+//            commentCount: 0, viewerCount: 39),
+//           Publication(
+//            user: Friend(surname: "Рзаев", name: "Руслан", avatar: "Димулик", publications: []),
+//            photos: ["Димулик_1", "Димулик_2", "Димулик_3", "Димулик_4", "Димулик_5", "Димулик_6", "Димулик_7"],
+//            date: "вчера в 22:34",
+//            isLiked: false, likeCount: 23,
+//            commentCount: 52, viewerCount: 560),
+//           Publication(
+//            user: Friend(surname: "Лопиталь", name: "Бальжина", avatar: "Димулик", publications: []),
+//            photos: ["Димулик_1", "Димулик_2", "Димулик_3", "Димулик_4", "Димулик_5", "Димулик_6", "Димулик_7"],
+//            date: "сегодня в 02:51",
+//            isLiked: false, likeCount: 122,
+//            commentCount: 9, viewerCount: 189),
+//           Publication(
+//            user: User(surname: "Еленский", name: "Эдуард", avatar: "Димулик", publications: []),
+//            photos: ["Димулик_1", "Димулик_2", "Димулик_3", "Димулик_4", "Димулик_5", "Димулик_6", "Димулик_7"],
+//            date: "вчера в 22:34",
+//            isLiked: true, likeCount: 10,
+//            commentCount: 5, viewerCount: 39),
+//           Publication(
+//            user: User(surname: "Стриж", name: "Иван", avatar: "Димулик", publications: []),
+//            photos: ["Димулик_1", "Димулик_2", "Димулик_3", "Димулик_4", "Димулик_5", "Димулик_6", "Димулик_7"],
+//            date: "вчера в 22:34",
+//            isLiked: true, likeCount: 10,
+//            commentCount: 5, viewerCount: 39)
+//    ]
+//    
+//    private var users = [
+//        User(surname: "Котов", name: "Димулик", avatar: "Димулик", publications: []),
+//        User(surname: "Григорчук", name: "Настасья", avatar: "Димулик", publications: []),
+//        User(surname: "Тёплый", name: "Антон", avatar: "Димулик", publications: []),
+//        User(surname: "Рзаев", name: "Руслан", avatar: "Димулик", publications: []),
+//        User(surname: "Лопиталь", name: "Бальжина", avatar: "Димулик", publications: []),
+//        User(surname: "Еленский", name: "Эдуард", avatar: "Димулик", publications: []),
+//        User(surname: "Стриж", name: "Иван", avatar: "Димулик", publications: [])
+//    ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -124,7 +124,8 @@ final class NewsFeedTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        publications.count + 1
+//        publications.count + 1
+        40
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -132,12 +133,12 @@ final class NewsFeedTableViewController: UITableViewController {
             case 0:
                 guard let cell = tableView.dequeueReusableCell(
                     withIdentifier: StoriesTableViewCell.identifier) as? StoriesTableViewCell else { return UITableViewCell() }
-                cell.configure(with: users)
+//                cell.configure(with: users)
                 return cell
             default:
                 guard let cell = tableView.dequeueReusableCell(
                     withIdentifier: NewsFeedTableViewCell.identifier) as? NewsFeedTableViewCell else { return UITableViewCell() }
-                cell.configure(publication: publications[indexPath.row - 1])
+//                cell.configure(publication: publications[indexPath.row - 1])
                 return cell
         }
     }

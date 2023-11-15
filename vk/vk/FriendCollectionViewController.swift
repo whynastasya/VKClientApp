@@ -9,13 +9,13 @@ import UIKit
 
 final class FriendCollectionViewController: UICollectionViewController {
 
-    var friend = User(surname: "", name: "", avatar: "", publications: [])
+//    var friend = Friend(surname: "", name: "", avatar: "", publications: [])
     
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.register(FriendCollectionViewCell.self, forCellWithReuseIdentifier: FriendCollectionViewCell.identifier)
         setupCollectionViewFlowLayout()
-        navigationItem.title = friend.name + friend.surname
+//        navigationItem.title = friend.name + friend.surname
     }
 
     private func setupCollectionViewFlowLayout() {
@@ -28,7 +28,8 @@ final class FriendCollectionViewController: UICollectionViewController {
         collectionView.collectionViewLayout = flowlayout
     }
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        friend.publications.count
+//        friend.publications.count
+        20
     }
 
     override func collectionView(
@@ -39,7 +40,7 @@ final class FriendCollectionViewController: UICollectionViewController {
             withReuseIdentifier: FriendCollectionViewCell.identifier,
             for: indexPath
         ) as! FriendCollectionViewCell
-        cell.configure(with: friend.publications[indexPath.row])
+//        cell.configure(with: friend.publications[indexPath.row])
         return cell
     }
 }

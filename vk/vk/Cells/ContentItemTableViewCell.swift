@@ -6,12 +6,13 @@
 //
 
 import UIKit
+import Kingfisher
 
 class ContentItemTableViewCell: UITableViewCell {
 
     private let nameLabel = UILabel()
     let descriptionLabel = UILabel()
-    private let avatarImageView = UIImageView()
+    let avatarImageView = UIImageView()
     private let avatarView = UIView()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -19,6 +20,7 @@ class ContentItemTableViewCell: UITableViewCell {
         setupAvatarImageView()
         setupNameLabel()
         setupDescriptionLabel()
+        setupConstraints()
     }
     
     required init?(coder: NSCoder) {
@@ -29,10 +31,6 @@ class ContentItemTableViewCell: UITableViewCell {
         contentView.addSubview(nameLabel)
         nameLabel.translatesAutoresizingMaskIntoConstraints = false
         nameLabel.font = UIFont.systemFont(ofSize: 17, weight: .medium)
-        NSLayoutConstraint.activate([
-            nameLabel.leadingAnchor.constraint(equalTo: avatarView.trailingAnchor, constant: 10),
-            nameLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 5)
-        ])
     }
     
     private func setupDescriptionLabel() {
@@ -40,10 +38,6 @@ class ContentItemTableViewCell: UITableViewCell {
         descriptionLabel.translatesAutoresizingMaskIntoConstraints = false
         descriptionLabel.font = UIFont.systemFont(ofSize: 15, weight: .medium)
         descriptionLabel.textColor = .gray
-        NSLayoutConstraint.activate([
-            descriptionLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 0),
-            descriptionLabel.leadingAnchor.constraint(equalTo: nameLabel.leadingAnchor)
-        ])
     }
     
     private func setupAvatarImageView() {
@@ -52,22 +46,12 @@ class ContentItemTableViewCell: UITableViewCell {
         avatarView.layer.cornerRadius = 22
         avatarView.backgroundColor = .purple
         avatarView.clipsToBounds = true
-        NSLayoutConstraint.activate([
-            avatarView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
-            avatarView.widthAnchor.constraint(equalToConstant: 44),
-            avatarView.heightAnchor.constraint(equalToConstant: 44),
-            avatarView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 15)
-        ])
         avatarView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(avatarTapped(_ :))))
         
         avatarView.addSubview(avatarImageView)
         avatarImageView.translatesAutoresizingMaskIntoConstraints = false
         avatarImageView.layer.cornerRadius = 22
         avatarImageView.clipsToBounds = true
-        NSLayoutConstraint.activate([
-            avatarImageView.widthAnchor.constraint(equalToConstant: 44),
-            avatarImageView.heightAnchor.constraint(equalToConstant: 44)
-        ])
     }
                                         
     @objc func avatarTapped(_: UIView) {
@@ -79,10 +63,27 @@ class ContentItemTableViewCell: UITableViewCell {
         })
     }
     
+    private func setupConstraints() {
+        NSLayoutConstraint.activate([
+            nameLabel.leadingAnchor.constraint(equalTo: avatarView.trailingAnchor, constant: 10),
+            nameLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 5),
+            
+            descriptionLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 0),
+            descriptionLabel.leadingAnchor.constraint(equalTo: nameLabel.leadingAnchor),
+            
+            avatarView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
+            avatarView.widthAnchor.constraint(equalToConstant: 44),
+            avatarView.heightAnchor.constraint(equalToConstant: 44),
+            avatarView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 15),
+            
+            avatarImageView.widthAnchor.constraint(equalToConstant: 44),
+            avatarImageView.heightAnchor.constraint(equalToConstant: 44)
+        ])
+    }
  
     func configure(with name: String, description: String, avatar: String) {
         nameLabel.text = name
         descriptionLabel.text = description
-        avatarImageView.image = UIImage(named: avatar)
+        avatarImageView.kf.setImage(with: URL(string: avatar))
     }
 }

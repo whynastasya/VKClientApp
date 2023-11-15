@@ -28,6 +28,7 @@ final class AuthorizationViewController: UIViewController {
         setupLoginTextField()
         setupPasswordRecoveryButton()
         setupLogoImageView()
+        setupConstraints()
         let nearBottomConstraints = [
             passwordTextField.bottomAnchor.constraint(equalToSystemSpacingBelow: loginButton.topAnchor, multiplier: 1.0)
         ]
@@ -39,7 +40,6 @@ final class AuthorizationViewController: UIViewController {
     private func setupLogoImageView() {
         view.addSubview(logoImageView)
         logoImageView.translatesAutoresizingMaskIntoConstraints = false
-        setupLogoImageViewConstraints()
         logoImageView.image = UIImage(named: "logo")
     }
     
@@ -55,7 +55,6 @@ final class AuthorizationViewController: UIViewController {
             attributes: [.foregroundColor: UIColor.white]
         )
         loginTextField.textColor = .white
-        setupLoginTextFieldConstraints()
     }
     
     private func setupPasswordTextField() {
@@ -71,7 +70,6 @@ final class AuthorizationViewController: UIViewController {
             string: "Пароль",
             attributes: [.foregroundColor: UIColor.white]
         )
-        setupPasswordTextFieldConstraints()
     }
     
     private func setupPasswordRecoveryButton() {
@@ -84,7 +82,6 @@ final class AuthorizationViewController: UIViewController {
             for: .normal
         )
         passwordRecoveryButton.contentHorizontalAlignment = .leading
-        setupPasswordRecoveryButtonConstraints()
     }
     
     private func setupLoginButton() {
@@ -101,7 +98,6 @@ final class AuthorizationViewController: UIViewController {
         )
         loginButton.setTitleColor(.gray, for: .selected)
         loginButton.addTarget(self, action: #selector(loginButtonPressed(_ :)), for: .touchUpInside)
-        setupLoginButtonConstraints()
     }
     
     private func setupSignInButton() {
@@ -114,57 +110,32 @@ final class AuthorizationViewController: UIViewController {
                          .foregroundColor: UIColor.white]),
             for: .normal
         )
-        setupSignInButtonConstraints()
     }
     
-    private func setupLogoImageViewConstraints() {
+    private func setupConstraints() {
         NSLayoutConstraint.activate([
             logoImageView.widthAnchor.constraint(equalToConstant: 100),
             logoImageView.heightAnchor.constraint(equalToConstant: 100),
             logoImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            logoImageView.bottomAnchor.constraint(equalTo: passwordTextField.topAnchor, constant: -80)
-        ])
-    }
-    
-    private func setupLoginTextFieldConstraints() {
-        NSLayoutConstraint.activate([
+            logoImageView.bottomAnchor.constraint(equalTo: passwordTextField.topAnchor, constant: -80),
+            
             loginTextField.bottomAnchor.constraint(equalTo: passwordTextField.topAnchor, constant: -15),
             loginTextField.leadingAnchor.constraint(equalTo: loginButton.leadingAnchor),
-            loginTextField.trailingAnchor.constraint(equalTo: loginButton.trailingAnchor)
-        ])
-    }
-
-    private func setupPasswordTextFieldConstraints() {
-        NSLayoutConstraint.deactivate([
-            passwordTextField.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 100)
-        ])
-        NSLayoutConstraint.activate([
+            loginTextField.trailingAnchor.constraint(equalTo: loginButton.trailingAnchor),
+            
             passwordTextField.leadingAnchor.constraint(equalTo: loginButton.leadingAnchor),
             passwordTextField.trailingAnchor.constraint(equalTo: loginButton.trailingAnchor),
             passwordTextField.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             passwordTextField.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -70),
-//            passwordTextField.bottomAnchor.constraint(equalTo: view.keyboardLayoutGuide.topAnchor, constant: -180)
-        ])
-    }
-    
-    private func setupPasswordRecoveryButtonConstraints() {
-        NSLayoutConstraint.activate([
+            
             passwordRecoveryButton.leadingAnchor.constraint(equalTo: loginButton.leadingAnchor),
             passwordRecoveryButton.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: 5),
-            passwordRecoveryButton.widthAnchor.constraint(equalToConstant: 180)
-        ])
-    }
-    
-    private func setupLoginButtonConstraints() {
-        NSLayoutConstraint.activate([
+            passwordRecoveryButton.widthAnchor.constraint(equalToConstant: 180),
+            
             loginButton.bottomAnchor.constraint(equalTo: view.keyboardLayoutGuide.topAnchor, constant: -60),
             loginButton.trailingAnchor.constraint(equalTo: signInButton.trailingAnchor, constant: -60),
-            loginButton.leadingAnchor.constraint(equalTo: signInButton.leadingAnchor, constant: 60)
-        ])
-    }
-    
-    private func setupSignInButtonConstraints() {
-        NSLayoutConstraint.activate([
+            loginButton.leadingAnchor.constraint(equalTo: signInButton.leadingAnchor, constant: 60),
+            
             signInButton.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             signInButton.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             signInButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),

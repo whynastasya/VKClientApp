@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Session {
+final class Session {
     
     static let instance = Session()
     
@@ -15,4 +15,5 @@ class Session {
     
     var token: String = ""
     var userID: Int = 0
+    var friends = [Friend]()
 }

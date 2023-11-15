@@ -266,8 +266,8 @@ final class NewsFeedTableViewCell: UITableViewCell {
     }
     
     func configure(publication: Publication) {
-        userAvatar.image = UIImage(named: publication.user.avatar)
-        userName.text = publication.user.surname + " " + publication.user.name
+//        userAvatar.image = UIImage(named: publication.user.avatar)
+//        userName.text = publication.user.surname + " " + publication.user.name
         dateLabel.text = publication.date
         photoImageView.image = UIImage(named: publication.photos[0])
         for photo in publication.photos {

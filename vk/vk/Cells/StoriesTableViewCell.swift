@@ -127,12 +127,12 @@ final class StoriesTableViewCell: UITableViewCell {
         return plusImageView
     }
     
-    func configure(with users: [User]) {
-        usersWithStoriesCount = users.count
-        for index in 0..<usersWithStoriesCount {
-            storiesPreviewImageViews[index].image = UIImage(named: users[index].avatar)
-            storiesNameLabels[index].text = users[index].name
-        }
-    }
+//    func configure(with users: [User]) {
+//        usersWithStoriesCount = users.count
+//        for index in 0..<usersWithStoriesCount {
+//            storiesPreviewImageViews[index].image = UIImage(named: users[index].avatar)
+//            storiesNameLabels[index].text = users[index].name
+//        }
+//    }
 }
 
