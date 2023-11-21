@@ -9,31 +9,31 @@ import UIKit
 
 final class CommunitiesTableViewController: UITableViewController {
     
-    var groups = [
-        Community(name: "Fast Food Music", avatar: "Fast_Food_Music", theme: "Интернет-СМИ", subcribersCount: "701 413"),
-        Community(name: "Андеграунд Бурятии", avatar: "Андеграунд_Бурятии", theme: "Юмор", subcribersCount: "74 793"),
-        Community(name: "Гранит Науки (КБ-3)", avatar: "Гранит_Науки", theme: "Образование", subcribersCount: "596"),
-        Community(name: "Fast Food Music", avatar: "Fast_Food_Music", theme: "Интернет-СМИ", subcribersCount: "701 413"),
-        Community(name: "Андеграунд Бурятии", avatar: "Андеграунд_Бурятии", theme: "Юмор", subcribersCount: "74 793"),
-        Community(name: "Гранит Науки (КБ-3)", avatar: "Гранит_Науки", theme: "Образование", subcribersCount: "596"),
-        Community(name: "Fast Food Music", avatar: "Fast_Food_Music", theme: "Интернет-СМИ", subcribersCount: "701 413"),
-        Community(name: "Андеграунд Бурятии", avatar: "Андеграунд_Бурятии", theme: "Юмор", subcribersCount: "74 793"),
-        Community(name: "Гранит Науки (КБ-3)", avatar: "Гранит_Науки", theme: "Образование", subcribersCount: "596"),
-        Community(name: "Fast Food Music", avatar: "Fast_Food_Music", theme: "Интернет-СМИ", subcribersCount: "701 413"),
-        Community(name: "Андеграунд Бурятии", avatar: "Андеграунд_Бурятии", theme: "Юмор", subcribersCount: "74 793"),
-        Community(name: "Гранит Науки (КБ-3)", avatar: "Гранит_Науки", theme: "Образование", subcribersCount: "596")
-    ]
+    var groups = [Group]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        VKService().getGroups(with: Session.instance.userID) { groups in
+            self.groups = groups
+            self.reloadDataWithAnimation()
+        }
         tableView.register(UserCommunityTableViewCell.self, forCellReuseIdentifier: UserCommunityTableViewCell.identifier)
         setupNavigationBar()
+        
     }
     
     private func setupNavigationBar() {
         navigationItem.title = "Сообщества"
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addAvailableGroup(_ :)))
         navigationController?.navigationBar.isTranslucent = false
+    }
+    
+    private func reloadDataWithAnimation() {
+        UIView.transition(with: tableView,
+                          duration: 0.35,
+                          options: .transitionCrossDissolve,
+                          animations: { self.tableView.reloadData() }
+        )
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -44,12 +44,12 @@ final class CommunitiesTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(
             withIdentifier: UserCommunityTableViewCell.identifier
         ) as! UserCommunityTableViewCell
-        cell.configure(with: groups[indexPath.row].name, description: groups[indexPath.row].theme + ", " + groups[indexPath.row].subcribersCount, avatar: groups[indexPath.row].avatar)
+        cell.configure(with: groups[indexPath.row].name, description: groups[indexPath.row].theme + ", " + String(groups[indexPath.row].subcribersCount), avatar: groups[indexPath.row].avatarURL)
         return cell
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        50
+        55
     }
     
     override func tableView(

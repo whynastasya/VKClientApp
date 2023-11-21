@@ -27,6 +27,7 @@ struct Friend: Decodable {
     var lastSeen: LastSeenTime?
     var sex: SexType = .nil
     var birthday: String?
+    var photos: [Photo]?
     
     enum CodingKeys: String, CodingKey {
         case id

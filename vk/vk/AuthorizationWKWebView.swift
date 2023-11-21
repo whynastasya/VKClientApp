@@ -51,6 +51,7 @@ extension AuthorizationWKWebView: WKNavigationDelegate {
         Session.instance.token = token!
         Session.instance.userID = Int(userID!) ?? 0
         print(token)
+        print(userID)
         decisionHandler(.cancel)
         let tabBar = TabBarBuilder.createTabBarController()
         tabBar.modalPresentationStyle = .fullScreen

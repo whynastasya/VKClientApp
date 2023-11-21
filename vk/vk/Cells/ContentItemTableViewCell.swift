@@ -30,13 +30,13 @@ class ContentItemTableViewCell: UITableViewCell {
     private func setupNameLabel() {
         contentView.addSubview(nameLabel)
         nameLabel.translatesAutoresizingMaskIntoConstraints = false
-        nameLabel.font = UIFont.systemFont(ofSize: 17, weight: .medium)
+        nameLabel.font = UIFont.systemFont(ofSize: 16, weight: .medium)
     }
     
     private func setupDescriptionLabel() {
         contentView.addSubview(descriptionLabel)
         descriptionLabel.translatesAutoresizingMaskIntoConstraints = false
-        descriptionLabel.font = UIFont.systemFont(ofSize: 15, weight: .medium)
+        descriptionLabel.font = UIFont.systemFont(ofSize: 13, weight: .medium)
         descriptionLabel.textColor = .gray
     }
     
@@ -67,9 +67,11 @@ class ContentItemTableViewCell: UITableViewCell {
         NSLayoutConstraint.activate([
             nameLabel.leadingAnchor.constraint(equalTo: avatarView.trailingAnchor, constant: 10),
             nameLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 5),
+            nameLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10),
             
             descriptionLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 0),
             descriptionLabel.leadingAnchor.constraint(equalTo: nameLabel.leadingAnchor),
+            descriptionLabel.trailingAnchor.constraint(equalTo: nameLabel.trailingAnchor),
             
             avatarView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
             avatarView.widthAnchor.constraint(equalToConstant: 44),
