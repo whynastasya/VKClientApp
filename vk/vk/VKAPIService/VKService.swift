@@ -46,7 +46,7 @@ final class VKService {
     }
     
     func getPhotos(with userID: Int, completion: @escaping ([Photo]) -> Void) {
-        let url = "https://api.vk.com/method/groups.get"
+        let url = "https://api.vk.com/method/photos.get"
         let parameters: Parameters = [
             "access_token": Session.instance.token,
             "extended": "1",
@@ -59,6 +59,7 @@ final class VKService {
             print(response.request)
             if let data = response.data {
                 guard let photos = try? JSONDecoder().decode(PhotosResponse.self, from: data).response.items else { return }
+                print(photos)
                 completion(photos)
             }
         }

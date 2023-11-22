@@ -6,15 +6,16 @@
 //
 
 import UIKit
+import Kingfisher
 
 final class FriendCollectionViewCell: UICollectionViewCell {
     
     static let identifier = "Friend Cell"
     
-    private let publicationImageView = UIImageView()
+    private let photoImageView = UIImageView()
     private let likeButton = UIButton()
-    private let likeCountLabel = UILabel()
-    private var likeCount = 0
+    private let likesCountLabel = UILabel()
+    private var likesCount = 0
     
     override init(frame: CGRect) {
         super.init(frame: .zero)
@@ -28,15 +29,15 @@ final class FriendCollectionViewCell: UICollectionViewCell {
     }
     
     private func setupPublicationImageView() {
-        contentView.addSubview(publicationImageView)
-        publicationImageView.translatesAutoresizingMaskIntoConstraints = false
-        publicationImageView.contentMode = .scaleAspectFit
-        publicationImageView.backgroundColor = .blue
+        contentView.addSubview(photoImageView)
+        photoImageView.translatesAutoresizingMaskIntoConstraints = false
+        photoImageView.contentMode = .scaleAspectFit
+        photoImageView.backgroundColor = .black
         NSLayoutConstraint.activate([
-            publicationImageView.topAnchor.constraint(equalTo: contentView.topAnchor),
-            publicationImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
-            publicationImageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
-            publicationImageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
+            photoImageView.topAnchor.constraint(equalTo: contentView.topAnchor),
+            photoImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            photoImageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+            photoImageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
         ])
     }
     
@@ -50,20 +51,20 @@ final class FriendCollectionViewCell: UICollectionViewCell {
         NSLayoutConstraint.activate([
             likeButton.widthAnchor.constraint(equalToConstant: 40),
             likeButton.heightAnchor.constraint(equalTo: likeButton.widthAnchor, multiplier: 1),
-            likeButton.bottomAnchor.constraint(equalTo: publicationImageView.bottomAnchor, constant: -2),
-            likeButton.trailingAnchor.constraint(equalTo: publicationImageView.trailingAnchor, constant: -2)
+            likeButton.bottomAnchor.constraint(equalTo: photoImageView.bottomAnchor, constant: -2),
+            likeButton.trailingAnchor.constraint(equalTo: photoImageView.trailingAnchor, constant: -2)
         ])
     }
     
     private func setupLikeCountLabel() {
-        contentView.addSubview(likeCountLabel)
-        likeCountLabel.translatesAutoresizingMaskIntoConstraints = false
-        likeCountLabel.font = UIFont.systemFont(ofSize: 18, weight: .regular)
-        likeCountLabel.textColor = .gray
-        likeCountLabel.text = "\(likeCount)"
+        contentView.addSubview(likesCountLabel)
+        likesCountLabel.translatesAutoresizingMaskIntoConstraints = false
+        likesCountLabel.font = UIFont.systemFont(ofSize: 18, weight: .regular)
+        likesCountLabel.textColor = .gray
+        likesCountLabel.text = "\(likesCount)"
         NSLayoutConstraint.activate([
-            likeCountLabel.trailingAnchor.constraint(equalTo: likeButton.leadingAnchor),
-            likeCountLabel.centerYAnchor.constraint(equalTo: likeButton.centerYAnchor),
+            likesCountLabel.trailingAnchor.constraint(equalTo: likeButton.leadingAnchor),
+            likesCountLabel.centerYAnchor.constraint(equalTo: likeButton.centerYAnchor),
             
         ])
     }
@@ -71,33 +72,37 @@ final class FriendCollectionViewCell: UICollectionViewCell {
     @objc func like(_ : UIButton) {
         if likeButton.isSelected == false {
             likeButton.isSelected = true
-            likeCount += 1
+            likesCount += 1
             UIView.animate(
                 withDuration: 0.5, delay: 0, options: .autoreverse,
                 animations: {
-                self.likeCountLabel.text = "\(self.likeCount)"
-                self.likeCountLabel.textColor = .red
-                self.likeCountLabel.transform = self.likeCountLabel.transform.scaledBy(x: 1.2, y: 1.2)
+                self.likesCountLabel.text = "\(self.likesCount)"
+                self.likesCountLabel.textColor = .red
+                self.likesCountLabel.transform = self.likesCountLabel.transform.scaledBy(x: 1.2, y: 1.2)
                 self.likeButton.transform = self.likeButton.transform.scaledBy(x: 1.2, y: 1.2)
             }, completion: {_ in
-                self.likeCountLabel.transform = .identity
+                self.likesCountLabel.transform = .identity
                 self.likeButton.transform = .identity
             })
         } else {
             likeButton.isSelected = false
-            likeCount -= 1
-            likeCountLabel.text = "\(likeCount)"
-            likeCountLabel.textColor = .gray
+            likesCount -= 1
+            likesCountLabel.text = "\(likesCount)"
+            likesCountLabel.textColor = .gray
         }
     }
     
-    func configure(with publication: Publication) {
-        publicationImageView.image = UIImage(named: publication.photos[0])
-        likeButton.isSelected = publication.isLiked
-        if publication.isLiked == true {
-            likeCountLabel.textColor = .red
+    func configure(with photo: Photo) {
+        UIView.transition(with: photoImageView,
+                          duration: 0.4,
+                          options: .transitionCrossDissolve,
+                          animations: { self.photoImageView.kf.setImage(with: URL(string: photo.nameURL)) },
+                          completion: nil)
+        likeButton.isSelected = photo.isLiked
+        if photo.isLiked == true {
+            likesCountLabel.textColor = .red
         }
-        likeCount = publication.likeCount
-        likeCountLabel.text = "\(likeCount)"
+        likesCount = photo.likesCount
+        likesCountLabel.text = "\(likesCount)"
     }
 }

@@ -147,6 +147,13 @@ final class NewsFeedTableViewCell: UITableViewCell {
             renderingMode: .alwaysOriginal),
             for: .normal
         )
+        likesButton.setAttributedTitle(
+            NSAttributedString(string: String(likeCount),
+            attributes: [.font: UIFont.systemFont(ofSize: 15,
+            weight: .medium),
+            .foregroundColor: UIColor.systemRed]),
+            for: .selected
+        )
         likesButton.setImage(UIImage(systemName: "heart.fill", withConfiguration: UIImage.SymbolConfiguration(scale: .large))?.withTintColor(.systemRed, renderingMode: .alwaysOriginal), for: .selected)
         likesButton.imageEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 10)
         likesButton.addTarget(self, action: #selector(like), for: .touchUpInside)
@@ -236,11 +243,11 @@ final class NewsFeedTableViewCell: UITableViewCell {
     
     @objc func like() {
         if likesButton.isSelected == false {
-            likesButton.backgroundColor = .systemRed.withAlphaComponent(0.2)
-            UIView.animate(withDuration: 0.4, delay: 0, options: .autoreverse, animations: {
-                self.likesButton.imageView?.transform = (self.likesButton.imageView?.transform.scaledBy(x: 1.3, y: 1.3))!
+            UIView.animate(withDuration: 0.5, delay: 0, options: .curveEaseInOut, animations: {
+                self.likesButton.imageView?.transform = (self.likesButton.imageView?.transform.scaledBy(x: 1.2, y: 1.2))!
                 self.likesButton.isSelected = true
                 self.likeCount += 1
+                self.likesButton.backgroundColor = .systemRed.withAlphaComponent(0.2)
                 self.likesButton.setAttributedTitle(
                     NSAttributedString(string: String(self.likeCount),
                     attributes: [.font: UIFont.systemFont(ofSize: 15,

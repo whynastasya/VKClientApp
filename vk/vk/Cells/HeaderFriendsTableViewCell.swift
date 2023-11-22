@@ -87,7 +87,7 @@ final class HeaderFriendsTableViewCell: UITableViewCell {
     
     private func setupConstraints() {
         NSLayoutConstraint.activate([
-            titleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10),
+            titleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 15),
             titleLabel.topAnchor.constraint(equalTo: contentView.topAnchor),
             
             countTitleLabel.leadingAnchor.constraint(equalTo: titleLabel.trailingAnchor, constant: 5),

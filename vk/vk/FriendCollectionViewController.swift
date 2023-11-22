@@ -9,13 +9,27 @@ import UIKit
 
 final class FriendCollectionViewController: UICollectionViewController {
 
-//    var friend = Friend(surname: "", name: "", avatar: "", publications: [])
+    var friend = Friend()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        VKService().getPhotos(with: friend.id) { photos in
+            print(photos)
+            self.friend.photos = photos
+            self.reloadDataWithAnimation()
+        }
+        print(friend.id)
         collectionView.register(FriendCollectionViewCell.self, forCellWithReuseIdentifier: FriendCollectionViewCell.identifier)
         setupCollectionViewFlowLayout()
-//        navigationItem.title = friend.name + friend.surname
+        navigationItem.title = friend.surname + " " + friend.name
+    }
+    
+    private func reloadDataWithAnimation() {
+        UIView.transition(with: collectionView,
+                          duration: 0.35,
+                          options: .transitionCrossDissolve,
+                          animations: { self.collectionView.reloadData() }
+        )
     }
 
     private func setupCollectionViewFlowLayout() {
@@ -28,8 +42,7 @@ final class FriendCollectionViewController: UICollectionViewController {
         collectionView.collectionViewLayout = flowlayout
     }
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//        friend.publications.count
-        20
+        friend.photos?.count ?? 0
     }
 
     override func collectionView(
@@ -40,7 +53,7 @@ final class FriendCollectionViewController: UICollectionViewController {
             withReuseIdentifier: FriendCollectionViewCell.identifier,
             for: indexPath
         ) as! FriendCollectionViewCell
-//        cell.configure(with: friend.publications[indexPath.row])
+        cell.configure(with: friend.photos![indexPath.row])
         return cell
     }
 }

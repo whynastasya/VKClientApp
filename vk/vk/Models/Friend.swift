@@ -77,6 +77,21 @@ struct Friend: Decodable {
         self.lastSeen = self.getLastSeenFromUNIXTime(time: time)
     }
     
+    init() {
+        self.id = 0
+        self.surname = "Жопа"
+        self.name = "Говно"
+        self.age = ""
+        self.city = ""
+        self.education = ""
+        self.avatarURL = ""
+        self.isOnline = false
+        self.lastSeen = .none
+        self.sex = .nil
+        self.birthday = ""
+        self.photos = []
+    }
+    
     private func dateFromMultipleFormats(fromString dateString: String?) -> String? {
         var formats: [String] = ["dd.MM.yyyy", "dd.MM"]
         let dateFormatter = DateFormatter()

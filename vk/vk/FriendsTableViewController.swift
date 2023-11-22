@@ -91,11 +91,10 @@ final class FriendsTableViewController: UITableViewController {
     private func sortFriends() {
         switch orderType {
             case .hints:
-                return
-//                VKService().getFriends(with: Session.instance.userID) { friends in
-//                    self.friends = friends
-//                    self.reloadDataWithAnimation()
-//                }
+                VKService().getFriends(with: Session.instance.userID) { friends in
+                    self.friends = friends
+                    self.reloadDataWithAnimation()
+                }
             case .name:
                 friends.sort {
                     if $0.surname == $1.surname {
@@ -244,7 +243,7 @@ final class FriendsTableViewController: UITableViewController {
             } else {
                 friend = friends[indexPath.row - 1]
             }
-//            friendCollectionViewController.friend = friend
+            friendCollectionViewController.friend = friend
             navigationController?.pushViewController(friendCollectionViewController, animated: true)
         }
     }
