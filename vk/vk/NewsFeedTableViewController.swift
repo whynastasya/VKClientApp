@@ -9,64 +9,9 @@ import UIKit
 
 final class NewsFeedTableViewController: UITableViewController {
     
-//    private let publications = [
-//           Publication(
-//            user: Friend(surname: "Котов", name: "Димулик", avatar: "Димулик", publications: []),
-//            photos: ["Димулик_1", "Димулик_2", "Димулик_3", "Димулик_4", "Димулик_5", "Димулик_6", "Димулик_7"],
-//            date: "вчера в 22:34",
-//            isLiked: false, likeCount: 10,
-//            commentCount: 5, viewerCount: 39),
-//           Publication(
-//            user: Friend(surname: "Григорчук", name: "Настасья", avatar: "Димулик", publications: []),
-//            photos: ["Димулик_1", "Димулик_2", "Димулик_3", "Димулик_4", "Димулик_5", "Димулик_6", "Димулик_7"],
-//            date: "час назад",
-//            isLiked: true, likeCount: 45,
-//            commentCount: 2, viewerCount: 189),
-//           Publication(
-//            user: Friend(surname: "Тёплый", name: "Антон", avatar: "Димулик", publications: []),
-//            photos: ["Димулик_1", "Димулик_2", "Димулик_3", "Димулик_4", "Димулик_5", "Димулик_6", "Димулик_7"],
-//            date: "два часа назад",
-//            isLiked: false, likeCount: 3,
-//            commentCount: 0, viewerCount: 39),
-//           Publication(
-//            user: Friend(surname: "Рзаев", name: "Руслан", avatar: "Димулик", publications: []),
-//            photos: ["Димулик_1", "Димулик_2", "Димулик_3", "Димулик_4", "Димулик_5", "Димулик_6", "Димулик_7"],
-//            date: "вчера в 22:34",
-//            isLiked: false, likeCount: 23,
-//            commentCount: 52, viewerCount: 560),
-//           Publication(
-//            user: Friend(surname: "Лопиталь", name: "Бальжина", avatar: "Димулик", publications: []),
-//            photos: ["Димулик_1", "Димулик_2", "Димулик_3", "Димулик_4", "Димулик_5", "Димулик_6", "Димулик_7"],
-//            date: "сегодня в 02:51",
-//            isLiked: false, likeCount: 122,
-//            commentCount: 9, viewerCount: 189),
-//           Publication(
-//            user: User(surname: "Еленский", name: "Эдуард", avatar: "Димулик", publications: []),
-//            photos: ["Димулик_1", "Димулик_2", "Димулик_3", "Димулик_4", "Димулик_5", "Димулик_6", "Димулик_7"],
-//            date: "вчера в 22:34",
-//            isLiked: true, likeCount: 10,
-//            commentCount: 5, viewerCount: 39),
-//           Publication(
-//            user: User(surname: "Стриж", name: "Иван", avatar: "Димулик", publications: []),
-//            photos: ["Димулик_1", "Димулик_2", "Димулик_3", "Димулик_4", "Димулик_5", "Димулик_6", "Димулик_7"],
-//            date: "вчера в 22:34",
-//            isLiked: true, likeCount: 10,
-//            commentCount: 5, viewerCount: 39)
-//    ]
-//    
-//    private var users = [
-//        User(surname: "Котов", name: "Димулик", avatar: "Димулик", publications: []),
-//        User(surname: "Григорчук", name: "Настасья", avatar: "Димулик", publications: []),
-//        User(surname: "Тёплый", name: "Антон", avatar: "Димулик", publications: []),
-//        User(surname: "Рзаев", name: "Руслан", avatar: "Димулик", publications: []),
-//        User(surname: "Лопиталь", name: "Бальжина", avatar: "Димулик", publications: []),
-//        User(surname: "Еленский", name: "Эдуард", avatar: "Димулик", publications: []),
-//        User(surname: "Стриж", name: "Иван", avatar: "Димулик", publications: [])
-//    ]
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .black
+        view.backgroundColor = .vkBlack
         setupNavigationBar()
         tableView.register(NewsFeedTableViewCell.self, forCellReuseIdentifier: NewsFeedTableViewCell.identifier)
         tableView.register(StoriesTableViewCell.self, forCellReuseIdentifier: StoriesTableViewCell.identifier)
@@ -88,11 +33,11 @@ final class NewsFeedTableViewController: UITableViewController {
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         titleLabel.text = "Главная"
         titleLabel.font = UIFont.systemFont(ofSize: 27, weight: .bold)
-        titleLabel.textColor = .white
+        titleLabel.textColor = .vkWhite
         
         let segmentedControl = UISegmentedControl()
         titleView.addSubview(segmentedControl)
-        segmentedControl.backgroundColor = .purple
+        segmentedControl.backgroundColor = .vkPurple
         segmentedControl.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
@@ -108,9 +53,9 @@ final class NewsFeedTableViewController: UITableViewController {
             segmentedControl.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor)
             
         ])
-        titleView.backgroundColor = .purple
+        titleView.backgroundColor = .vkPurple
         navigationItem.leftBarButtonItem = UIBarButtonItem(customView: titleView)
-        navigationController?.navigationBar.backgroundColor = .black
+        navigationController?.navigationBar.backgroundColor = .vkBlack
         navigationController?.navigationBar.isTranslucent = false
         navigationItem.rightBarButtonItems = [
             UIBarButtonItem(image: UIImage(systemName: "bell", withConfiguration: UIImage.SymbolConfiguration(scale: .large))?.withTintColor(.white, renderingMode: .alwaysOriginal), style: .done, target: self, action: nil),

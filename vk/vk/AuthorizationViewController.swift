@@ -19,7 +19,7 @@ final class AuthorizationViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .systemBlue.withAlphaComponent(0.98)
+        view.backgroundColor = .vkBlue
         let hideKeyboardGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard(_ :)))
         view.addGestureRecognizer(hideKeyboardGestureRecognizer)
         setupSignInButton()
@@ -49,12 +49,12 @@ final class AuthorizationViewController: UIViewController {
         loginTextField.borderStyle = .roundedRect
         loginTextField.layer.cornerRadius = 17
         loginTextField.clipsToBounds = true
-        loginTextField.backgroundColor = .white.withAlphaComponent(0.2)
+        loginTextField.backgroundColor = .vkLightWhite
         loginTextField.attributedPlaceholder = NSAttributedString(
             string: "Email или телефон",
-            attributes: [.foregroundColor: UIColor.white]
+            attributes: [.foregroundColor: UIColor.vkWhite]
         )
-        loginTextField.textColor = .white
+        loginTextField.textColor = .vkWhite
     }
     
     private func setupPasswordTextField() {
@@ -64,11 +64,11 @@ final class AuthorizationViewController: UIViewController {
         passwordTextField.layer.cornerRadius = 17
         passwordTextField.clipsToBounds = true
         passwordTextField.isSecureTextEntry = true
-        passwordTextField.backgroundColor = .white.withAlphaComponent(0.2)
-        passwordTextField.textColor = .white
+        passwordTextField.backgroundColor = .vkLightWhite
+        passwordTextField.textColor = .vkWhite
         passwordTextField.attributedPlaceholder = NSAttributedString(
             string: "Пароль",
-            attributes: [.foregroundColor: UIColor.white]
+            attributes: [.foregroundColor: UIColor.vkWhite]
         )
     }
     
@@ -78,7 +78,7 @@ final class AuthorizationViewController: UIViewController {
         passwordRecoveryButton.setAttributedTitle(
             NSAttributedString(string: "Забыли?",
             attributes: [.font: UIFont.systemFont(ofSize: 14, weight: .medium),
-                         .foregroundColor: UIColor.white.withAlphaComponent(0.8)]),
+                         .foregroundColor: UIColor.vkWhite2]),
             for: .normal
         )
         passwordRecoveryButton.contentHorizontalAlignment = .leading
@@ -87,16 +87,16 @@ final class AuthorizationViewController: UIViewController {
     private func setupLoginButton() {
         view.addSubview(loginButton)
         loginButton.translatesAutoresizingMaskIntoConstraints = false
-        loginButton.backgroundColor = .white
+        loginButton.backgroundColor = .vkWhite
         loginButton.layer.cornerRadius = 17
         loginButton.clipsToBounds = true
         loginButton.setAttributedTitle(
             NSAttributedString(string: "Войти",
                                attributes: [.font: UIFont.systemFont(ofSize: 20, weight: .semibold),
-                         .foregroundColor: UIColor.systemBlue]),
+                                            .foregroundColor: UIColor.vkBlue]),
             for: .normal
         )
-        loginButton.setTitleColor(.gray, for: .selected)
+        loginButton.setTitleColor(.vkGray, for: .selected)
         loginButton.addTarget(self, action: #selector(loginButtonPressed(_ :)), for: .touchUpInside)
     }
     
@@ -107,7 +107,7 @@ final class AuthorizationViewController: UIViewController {
         signInButton.setAttributedTitle(
             NSAttributedString(string: "Зарегистрироваться?",
             attributes: [.font: UIFont.systemFont(ofSize: 17, weight: .medium),
-                         .foregroundColor: UIColor.white]),
+                         .foregroundColor: UIColor.vkWhite]),
             for: .normal
         )
     }
@@ -154,7 +154,6 @@ final class AuthorizationViewController: UIViewController {
 //            present(alertController, animated: true)
 //        }
         let tabBar = TabBarBuilder.createTabBarController()
-        tabBar.tabBar.backgroundColor = .darkGray.withAlphaComponent(0.3)
         tabBar.modalPresentationStyle = .fullScreen
         present(tabBar, animated: true)
     }

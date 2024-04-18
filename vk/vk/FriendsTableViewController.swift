@@ -47,9 +47,9 @@ final class FriendsTableViewController: UITableViewController {
 
         let titleLabel = UILabel(frame: CGRectMake(0, 0, 200, 50))
         titleLabel.text = "Друзья"
-        titleLabel.textColor = .white
+        titleLabel.textColor = .vkWhite
         titleLabel.font = .systemFont(ofSize: 25, weight: .bold)
-        titleLabel.backgroundColor = UIColor.clear
+        titleLabel.backgroundColor = .vkClear
         titleLabel.textAlignment = .center
         navigationItem.titleView = titleLabel
     }

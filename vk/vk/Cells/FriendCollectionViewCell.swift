@@ -32,7 +32,7 @@ final class FriendCollectionViewCell: UICollectionViewCell {
         contentView.addSubview(photoImageView)
         photoImageView.translatesAutoresizingMaskIntoConstraints = false
         photoImageView.contentMode = .scaleAspectFit
-        photoImageView.backgroundColor = .black
+        photoImageView.backgroundColor = .vkBlack
         NSLayoutConstraint.activate([
             photoImageView.topAnchor.constraint(equalTo: contentView.topAnchor),
             photoImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
@@ -44,8 +44,8 @@ final class FriendCollectionViewCell: UICollectionViewCell {
     private func setupLikeButton() {
         contentView.addSubview(likeButton)
         likeButton.translatesAutoresizingMaskIntoConstraints = false
-        likeButton.setImage(UIImage(systemName: "heart", withConfiguration: UIImage.SymbolConfiguration(scale: .large))?.withTintColor(.gray, renderingMode: .alwaysOriginal), for: .normal)
-        likeButton.setImage(UIImage(systemName: "heart.fill", withConfiguration: UIImage.SymbolConfiguration(scale: .large))?.withTintColor(.systemRed, renderingMode: .alwaysOriginal), for: .selected)
+        likeButton.setImage(UIImage(systemName: "heart", withConfiguration: UIImage.SymbolConfiguration(scale: .large))?.withTintColor(.vkGray, renderingMode: .alwaysOriginal), for: .normal)
+        likeButton.setImage(UIImage(systemName: "heart.fill", withConfiguration: UIImage.SymbolConfiguration(scale: .large))?.withTintColor(.vkRed, renderingMode: .alwaysOriginal), for: .selected)
         likeButton.addTarget(self, action: #selector(like(_ :)), for: .touchUpInside)
         likeButton.isSelected = false
         NSLayoutConstraint.activate([
@@ -60,7 +60,7 @@ final class FriendCollectionViewCell: UICollectionViewCell {
         contentView.addSubview(likesCountLabel)
         likesCountLabel.translatesAutoresizingMaskIntoConstraints = false
         likesCountLabel.font = UIFont.systemFont(ofSize: 18, weight: .regular)
-        likesCountLabel.textColor = .gray
+        likesCountLabel.textColor = .vkGray
         likesCountLabel.text = "\(likesCount)"
         NSLayoutConstraint.activate([
             likesCountLabel.trailingAnchor.constraint(equalTo: likeButton.leadingAnchor),
@@ -88,19 +88,17 @@ final class FriendCollectionViewCell: UICollectionViewCell {
             likeButton.isSelected = false
             likesCount -= 1
             likesCountLabel.text = "\(likesCount)"
-            likesCountLabel.textColor = .gray
+            likesCountLabel.textColor = .vkGray
         }
     }
     
     func configure(with photo: Photo) {
         UIView.transition(with: photoImageView,
-                          duration: 0.4,
-                          options: .transitionCrossDissolve,
-                          animations: { self.photoImageView.kf.setImage(with: URL(string: photo.nameURL)) },
-                          completion: nil)
+                          duration: 0.5,
+                          animations: { self.photoImageView.kf.setImage(with: URL(string: photo.nameURL))})
         likeButton.isSelected = photo.isLiked
         if photo.isLiked == true {
-            likesCountLabel.textColor = .red
+            likesCountLabel.textColor = .vkRed
         }
         likesCount = photo.likesCount
         likesCountLabel.text = "\(likesCount)"

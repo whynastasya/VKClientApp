@@ -28,7 +28,7 @@ final class FriendTableViewCell: ContentItemTableViewCell {
     private func setupOnlineIndicatorImageView() {
         contentView.addSubview(onlineIndicatorImageView)
         onlineIndicatorImageView.translatesAutoresizingMaskIntoConstraints = false
-        onlineIndicatorImageView.image = UIImage(systemName: "smartphone")?.withTintColor(.systemGreen, renderingMode: .alwaysOriginal)
+        onlineIndicatorImageView.image = UIImage(systemName: "smartphone")?.withTintColor(.vkGreen, renderingMode: .alwaysOriginal)
         onlineIndicatorImageView.contentMode = .scaleAspectFit
     }
     
@@ -39,13 +39,13 @@ final class FriendTableViewCell: ContentItemTableViewCell {
         func setupMessageButton() {
             contentView.addSubview(messageButton)
             messageButton.translatesAutoresizingMaskIntoConstraints = false
-            messageButton.setImage(UIImage(systemName: "message.badge", withConfiguration: UIImage.SymbolConfiguration(scale: .large))?.withTintColor(.systemBlue, renderingMode: .alwaysOriginal), for: .normal)
+            messageButton.setImage(UIImage(systemName: "message.badge", withConfiguration: UIImage.SymbolConfiguration(scale: .large))?.withTintColor(.vkBlue, renderingMode: .alwaysOriginal), for: .normal)
         }
         
         func setupCallButton() {
             contentView.addSubview(callButton)
             callButton.translatesAutoresizingMaskIntoConstraints = false
-            callButton.setImage(UIImage(systemName: "phone", withConfiguration: UIImage.SymbolConfiguration(scale: .large))?.withTintColor(.systemBlue, renderingMode: .alwaysOriginal), for: .normal)
+            callButton.setImage(UIImage(systemName: "phone", withConfiguration: UIImage.SymbolConfiguration(scale: .large))?.withTintColor(.vkBlue, renderingMode: .alwaysOriginal), for: .normal)
         }
     }
     

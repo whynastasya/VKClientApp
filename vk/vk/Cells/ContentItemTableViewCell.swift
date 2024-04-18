@@ -37,14 +37,14 @@ class ContentItemTableViewCell: UITableViewCell {
         contentView.addSubview(descriptionLabel)
         descriptionLabel.translatesAutoresizingMaskIntoConstraints = false
         descriptionLabel.font = UIFont.systemFont(ofSize: 13, weight: .medium)
-        descriptionLabel.textColor = .gray
+        descriptionLabel.textColor = .vkGray
     }
     
     private func setupAvatarImageView() {
         contentView.addSubview(avatarView)
         avatarView.translatesAutoresizingMaskIntoConstraints = false
         avatarView.layer.cornerRadius = 22
-        avatarView.backgroundColor = .purple
+        avatarView.backgroundColor = .vkPurple
         avatarView.clipsToBounds = true
         avatarView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(avatarTapped(_ :))))
         
@@ -86,6 +86,8 @@ class ContentItemTableViewCell: UITableViewCell {
     func configure(with name: String, description: String, avatar: String) {
         nameLabel.text = name
         descriptionLabel.text = description
-        avatarImageView.kf.setImage(with: URL(string: avatar))
+        UIView.transition(with: avatarImageView, duration: 0.5, options: .transitionCrossDissolve, animations: {
+            self.avatarImageView.kf.setImage(with: URL(string: avatar))
+        })
     }
 }

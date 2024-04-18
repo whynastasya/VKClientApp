@@ -41,7 +41,7 @@ final class StoriesTableViewCell: UITableViewCell {
     }
     
     private func setupStoriesScrollView() {
-        storiesScrollView.backgroundColor = .black
+        storiesScrollView.backgroundColor = .vkBlack
         storiesScrollView.showsHorizontalScrollIndicator = false
         storiesScrollView.showsVerticalScrollIndicator = false
         contentView.addSubview(storiesScrollView)
@@ -50,7 +50,7 @@ final class StoriesTableViewCell: UITableViewCell {
     func createStoriesView() -> UIView {
         let storiesView = UIView()
         storiesView.layer.cornerRadius = Constants.storiesDimensions / 2
-        storiesView.backgroundColor = .systemBlue
+        storiesView.backgroundColor = .vkBlue
         
         return storiesView
     }
@@ -83,7 +83,7 @@ final class StoriesTableViewCell: UITableViewCell {
                 storyPreviewImageView.contentMode = .scaleAspectFill
                 let plusImageView = createPlusImageView()
                 storiesView.addSubview(plusImageView)
-                storiesView.backgroundColor = .black
+                storiesView.backgroundColor = .vkBlack
             } else {
                 storiesPreviewImageViews.append(storyPreviewImageView)
                 storiesNameLabels.append(storyNameLabel)
@@ -97,7 +97,7 @@ final class StoriesTableViewCell: UITableViewCell {
         userAvatarImageView.frame = CGRectMake(2.5, 2.5, userAvatarDimmension, userAvatarDimmension)
         userAvatarImageView.layer.cornerRadius = userAvatarDimmension / 2
         userAvatarImageView.layer.borderWidth = 3
-        userAvatarImageView.layer.borderColor = UIColor.black.cgColor
+        userAvatarImageView.layer.borderColor = UIColor.vkBlack.cgColor
         userAvatarImageView.clipsToBounds = true
         userAvatarImageView.contentMode = .scaleAspectFit
         return userAvatarImageView
@@ -105,7 +105,7 @@ final class StoriesTableViewCell: UITableViewCell {
     
     private func createStoryNameLabel() -> UILabel {
         let userNameLabel = UILabel()
-        userNameLabel.textColor = .white
+        userNameLabel.textColor = .vkWhite
         userNameLabel.font = UIFont.systemFont(ofSize: 13)
         userNameLabel.textAlignment = .center
         storiesScrollView.addSubview(userNameLabel)
@@ -118,8 +118,8 @@ final class StoriesTableViewCell: UITableViewCell {
     private func createPlusImageView() -> UIImageView {
         let plusImageView = UIImageView()
         plusImageView.image = UIImage(systemName: "plus.circle.fill")
-        plusImageView.tintColor = .systemBlue
-        plusImageView.backgroundColor = .white
+        plusImageView.tintColor = .vkBlue
+        plusImageView.backgroundColor = .vkWhite
         plusImageView.frame = CGRect(x: 45, y: 45, width: 25, height: 25)
         plusImageView.layer.cornerRadius = plusImageView.frame.width / 2
         plusImageView.layer.borderWidth = 3

@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import RealmSwift
 
 struct PhotosResponse: Decodable {
     var response: Photos

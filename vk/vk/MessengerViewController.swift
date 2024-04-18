@@ -12,6 +12,6 @@ final class MessengerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = .black.withAlphaComponent(0.7)
+        view.backgroundColor = .vkLightBlack
     }    
 }

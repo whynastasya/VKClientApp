@@ -64,5 +64,9 @@ final class VKService {
             }
         }
     }
+    
+    func getPosts() {
+        
+    }
 }
 

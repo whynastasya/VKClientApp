@@ -20,7 +20,6 @@ final class NewsFeedTableViewCell: UITableViewCell {
     private let likesButton = UIButton()
     private let commentsButton = UIButton()
     private let viewersLabel = UILabel()
-    private let grayColor = UIColor.gray
     private var likeCount = 0
     private var photoImages = [UIImage]()
     
@@ -42,7 +41,7 @@ final class NewsFeedTableViewCell: UITableViewCell {
     private func setupContentViewCell() {
         backgroundSqureView.layer.cornerRadius = 20
         backgroundSqureView.clipsToBounds = true
-        backgroundSqureView.backgroundColor = .black
+        backgroundSqureView.backgroundColor = .vkBlack
         contentView.addSubview(backgroundSqureView)
         setupUserAvatar()
         setupUserName()
@@ -72,7 +71,7 @@ final class NewsFeedTableViewCell: UITableViewCell {
         backgroundSqureView.addSubview(userName)
         userName.translatesAutoresizingMaskIntoConstraints = false
         userName.font = UIFont.systemFont(ofSize: 17, weight: .medium)
-        userName.textColor = .white
+        userName.textColor = .vkWhite
         NSLayoutConstraint.activate([
             userName.leadingAnchor.constraint(equalTo: userAvatar.trailingAnchor, constant: 10),
             userName.topAnchor.constraint(equalTo: userAvatar.topAnchor, constant: 3)
@@ -83,7 +82,7 @@ final class NewsFeedTableViewCell: UITableViewCell {
         backgroundSqureView.addSubview(dateLabel)
         dateLabel.translatesAutoresizingMaskIntoConstraints = false
         dateLabel.font = UIFont.systemFont(ofSize: 12, weight: .medium)
-        dateLabel.textColor = grayColor
+        dateLabel.textColor = .vkGray
         NSLayoutConstraint.activate([
             dateLabel.topAnchor.constraint(equalTo: userName.bottomAnchor, constant: 0),
             dateLabel.leadingAnchor.constraint(equalTo: userName.leadingAnchor)
@@ -139,11 +138,11 @@ final class NewsFeedTableViewCell: UITableViewCell {
     private func setupLikesButton() {
         backgroundSqureView.addSubview(likesButton)
         likesButton.translatesAutoresizingMaskIntoConstraints = false
-        likesButton.backgroundColor = grayColor.withAlphaComponent(0.2)
+        likesButton.backgroundColor = .vkGray
         likesButton.layer.cornerRadius = 18
         likesButton.setImage(
             UIImage(systemName: "heart",
-            withConfiguration: UIImage.SymbolConfiguration(scale: .large))?.withTintColor(grayColor,
+                    withConfiguration: UIImage.SymbolConfiguration(scale: .large))?.withTintColor(.vkGray,
             renderingMode: .alwaysOriginal),
             for: .normal
         )
@@ -168,10 +167,10 @@ final class NewsFeedTableViewCell: UITableViewCell {
     private func setupCommentsButton() {
         backgroundSqureView.addSubview(commentsButton)
         commentsButton.translatesAutoresizingMaskIntoConstraints = false
-        commentsButton.backgroundColor = grayColor.withAlphaComponent(0.2)
+        commentsButton.backgroundColor = .vkLightGray
         commentsButton.layer.cornerRadius = 18
-        commentsButton.setImage(UIImage(systemName: "message", withConfiguration: UIImage.SymbolConfiguration(scale: .large))?.withTintColor(grayColor, renderingMode: .alwaysOriginal), for: .normal)
-        commentsButton.setTitleColor(grayColor, for: .normal)
+        commentsButton.setImage(UIImage(systemName: "message", withConfiguration: UIImage.SymbolConfiguration(scale: .large))?.withTintColor(.vkGray, renderingMode: .alwaysOriginal), for: .normal)
+        commentsButton.setTitleColor(.vkGray, for: .normal)
         commentsButton.imageEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 10)
         NSLayoutConstraint.activate([
             commentsButton.leadingAnchor.constraint(equalTo: likesButton.trailingAnchor, constant: 5),
@@ -185,7 +184,7 @@ final class NewsFeedTableViewCell: UITableViewCell {
         backgroundSqureView.addSubview(viewersLabel)
         viewersLabel.translatesAutoresizingMaskIntoConstraints = false
         viewersLabel.font = UIFont.systemFont(ofSize: 15)
-        viewersLabel.textColor = grayColor
+        viewersLabel.textColor = .vkGray
         NSLayoutConstraint.activate([
             viewersLabel.trailingAnchor.constraint(equalTo: backgroundSqureView.trailingAnchor, constant: -5),
             viewersLabel.centerYAnchor.constraint(equalTo: likesButton.centerYAnchor)
@@ -194,7 +193,7 @@ final class NewsFeedTableViewCell: UITableViewCell {
     
     private func createMutableAttributedStringForViewersLabel(viewersCount: String) -> NSMutableAttributedString {
         let attachment = NSTextAttachment()
-        attachment.image = UIImage(systemName: "eye.fill")?.withTintColor(grayColor, renderingMode: .alwaysOriginal)
+        attachment.image = UIImage(systemName: "eye.fill")?.withTintColor(.vkGray, renderingMode: .alwaysOriginal)
         attachment.bounds = CGRect(x: -2, y: -1, width: 18, height: 12)
         let attachmentStr = NSAttributedString(attachment: attachment)
         let mutableAttributedString = NSMutableAttributedString()
@@ -213,7 +212,7 @@ final class NewsFeedTableViewCell: UITableViewCell {
             let moreButton = UIButton()
             backgroundSqureView.addSubview(moreButton)
             moreButton.translatesAutoresizingMaskIntoConstraints = false
-            moreButton.setImage(UIImage(systemName: "ellipsis", withConfiguration: UIImage.SymbolConfiguration(scale: .large))?.withTintColor(grayColor, renderingMode: .alwaysOriginal), for: .normal)
+            moreButton.setImage(UIImage(systemName: "ellipsis", withConfiguration: UIImage.SymbolConfiguration(scale: .large))?.withTintColor(.vkGray, renderingMode: .alwaysOriginal), for: .normal)
             NSLayoutConstraint.activate([
                 moreButton.trailingAnchor.constraint(equalTo: backgroundSqureView.trailingAnchor, constant: -15),
                 moreButton.centerYAnchor.constraint(equalTo: userAvatar.centerYAnchor)
@@ -224,11 +223,11 @@ final class NewsFeedTableViewCell: UITableViewCell {
             let repostButton = UIButton()
             backgroundSqureView.addSubview(repostButton)
             repostButton.translatesAutoresizingMaskIntoConstraints = false
-            repostButton.backgroundColor = grayColor.withAlphaComponent(0.2)
+            repostButton.backgroundColor = .vkLightGray
             repostButton.layer.cornerRadius = 18
             repostButton.setImage(
                 UIImage(systemName: "arrowshape.turn.up.right",
-                withConfiguration: UIImage.SymbolConfiguration(scale: .large))?.withTintColor(grayColor,
+                        withConfiguration: UIImage.SymbolConfiguration(scale: .large))?.withTintColor(.vkGray,
                 renderingMode: .alwaysOriginal),
                 for: .normal
             )
@@ -261,12 +260,12 @@ final class NewsFeedTableViewCell: UITableViewCell {
         } else {
             likesButton.isSelected = false
             likeCount -= 1
-            likesButton.backgroundColor = grayColor.withAlphaComponent(0.2)
+            likesButton.backgroundColor = .vkLightGray
             likesButton.setAttributedTitle(
                 NSAttributedString(string: String(likeCount),
                 attributes: [.font: UIFont.systemFont(ofSize: 15,
                 weight: .medium),
-                .foregroundColor: grayColor]),
+                             .foregroundColor: UIColor.vkGray]),
                 for: .normal
             )
         }
@@ -291,23 +290,23 @@ final class NewsFeedTableViewCell: UITableViewCell {
                 NSAttributedString(string: String(likeCount),
                 attributes: [.font: UIFont.systemFont(ofSize: 15,
                 weight: .medium),
-                .foregroundColor: UIColor.systemRed]),
+                .foregroundColor: UIColor.vkRed]),
                 for: .selected
             )
-            likesButton.backgroundColor = .systemRed.withAlphaComponent(0.2)
+            likesButton.backgroundColor = .vkLightRed
         } else {
             likesButton.isSelected = false
             likesButton.setAttributedTitle(
                 NSAttributedString(string: String(likeCount),
                 attributes: [.font: UIFont.systemFont(ofSize: 15,
                 weight: .medium),
-                .foregroundColor: grayColor]),
+                             .foregroundColor: UIColor.vkGray]),
                 for: .normal
             )
-            likesButton.backgroundColor = grayColor.withAlphaComponent(0.2)
+            likesButton.backgroundColor = .vkLightGray
         }
         
-        commentsButton.setAttributedTitle(NSAttributedString(string: String(publication.commentCount), attributes: [.font: UIFont.systemFont(ofSize: 15, weight: .medium), .foregroundColor: grayColor]), for: .normal)
+        commentsButton.setAttributedTitle(NSAttributedString(string: String(publication.commentCount), attributes: [.font: UIFont.systemFont(ofSize: 15, weight: .medium), .foregroundColor: UIColor.vkGray]), for: .normal)
         
         let mutableAttributedString = createMutableAttributedStringForViewersLabel(viewersCount: String(publication.viewerCount))
         viewersLabel.attributedText = mutableAttributedString

@@ -7,15 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		EE0513EA2AFD97C200DE5874 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = EE0513E92AFD97C200DE5874 /* Kingfisher */; };
 		EE0513EE2AFE939600DE5874 /* HeaderFriendsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE0513ED2AFE939600DE5874 /* HeaderFriendsTableViewCell.swift */; };
 		EE0513F02AFFE8BC00DE5874 /* OrderType.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE0513EF2AFFE8BC00DE5874 /* OrderType.swift */; };
 		EE0513F22AFFEA3F00DE5874 /* FriendsType.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE0513F12AFFEA3F00DE5874 /* FriendsType.swift */; };
 		EE0513F42B02381900DE5874 /* SexType.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE0513F32B02381900DE5874 /* SexType.swift */; };
 		EE0513F62B023BC800DE5874 /* LastSeenTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE0513F52B023BC800DE5874 /* LastSeenTime.swift */; };
 		EE0A41D92AFAB1700070627A /* AuthorizationWKWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE0A41D82AFAB16F0070627A /* AuthorizationWKWebView.swift */; };
-		EE0A41DC2AFAEB6E0070627A /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = EE0A41DB2AFAEB6E0070627A /* Alamofire */; };
 		EE0A41DE2AFAEB8C0070627A /* VKService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE0A41DD2AFAEB8C0070627A /* VKService.swift */; };
+		EE3828CE2B99D21A0002D00C /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = EE3828CD2B99D21A0002D00C /* Kingfisher */; };
+		EE3828D12B99D2800002D00C /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = EE3828D02B99D2800002D00C /* Alamofire */; };
 		EE4A5A792A951C08002D12BD /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4A5A782A951C08002D12BD /* Session.swift */; };
 		EE9B12372A4C6E31002235B3 /* NewsFeedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9B12362A4C6E31002235B3 /* NewsFeedTableViewController.swift */; };
 		EE9B123B2A4C6E89002235B3 /* MessengerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9B123A2A4C6E89002235B3 /* MessengerViewController.swift */; };
@@ -37,6 +37,8 @@
 		EE9B12D82A603959002235B3 /* NewsFeedHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9B12D72A603959002235B3 /* NewsFeedHeader.swift */; };
 		EE9B12DA2A605276002235B3 /* StoriesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9B12D92A605276002235B3 /* StoriesTableViewCell.swift */; };
 		EE9B12DC2A6052AA002235B3 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9B12DB2A6052AA002235B3 /* Constants.swift */; };
+		EE9DD3CF2BADD5EB00AD02A0 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9DD3CE2BADD5EB00AD02A0 /* Colors.swift */; };
+		EE9DD3D12BADEB9500AD02A0 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9DD3D02BADEB9500AD02A0 /* Fonts.swift */; };
 		EEB738E12A49E3B0001F8A1B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB738E02A49E3B0001F8A1B /* AppDelegate.swift */; };
 		EEB738E32A49E3B0001F8A1B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB738E22A49E3B0001F8A1B /* SceneDelegate.swift */; };
 		EEB738E52A49E3B0001F8A1B /* AuthorizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB738E42A49E3B0001F8A1B /* AuthorizationViewController.swift */; };
@@ -46,8 +48,6 @@
 		EED03A682A62E53C000A3196 /* LaunchScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED03A672A62E53C000A3196 /* LaunchScreenViewController.swift */; };
 		EED03A6A2A62E7C1000A3196 /* Circle.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED03A692A62E7C1000A3196 /* Circle.swift */; };
 		EED1606A2B0CEA87006D3FEA /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED160692B0CEA87006D3FEA /* Photo.swift */; };
-		EED1606D2B0E165D006D3FEA /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = EED1606C2B0E165D006D3FEA /* Realm */; };
-		EED1606F2B0E165D006D3FEA /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = EED1606E2B0E165D006D3FEA /* RealmSwift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -79,6 +79,8 @@
 		EE9B12D72A603959002235B3 /* NewsFeedHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsFeedHeader.swift; sourceTree = "<group>"; };
 		EE9B12D92A605276002235B3 /* StoriesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoriesTableViewCell.swift; sourceTree = "<group>"; };
 		EE9B12DB2A6052AA002235B3 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		EE9DD3CE2BADD5EB00AD02A0 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		EE9DD3D02BADEB9500AD02A0 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		EEB738DD2A49E3B0001F8A1B /* vk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = vk.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEB738E02A49E3B0001F8A1B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EEB738E22A49E3B0001F8A1B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -97,16 +99,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EED1606F2B0E165D006D3FEA /* RealmSwift in Frameworks */,
-				EED1606D2B0E165D006D3FEA /* Realm in Frameworks */,
-				EE0513EA2AFD97C200DE5874 /* Kingfisher in Frameworks */,
-				EE0A41DC2AFAEB6E0070627A /* Alamofire in Frameworks */,
+				EE3828CE2B99D21A0002D00C /* Kingfisher in Frameworks */,
+				EE3828D12B99D2800002D00C /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EE3828CF2B99D2800002D00C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		EE4A5A7A2A951D13002D12BD /* VKAPIService */ = {
 			isa = PBXGroup;
 			children = (
@@ -128,6 +135,8 @@
 				EED160692B0CEA87006D3FEA /* Photo.swift */,
 				EE0513F52B023BC800DE5874 /* LastSeenTime.swift */,
 				EE9B12D12A56EF36002235B3 /* Publication.swift */,
+				EE9DD3D02BADEB9500AD02A0 /* Fonts.swift */,
+				EE9DD3CE2BADD5EB00AD02A0 /* Colors.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -153,6 +162,7 @@
 			children = (
 				EEB738DF2A49E3B0001F8A1B /* vk */,
 				EEB738DE2A49E3B0001F8A1B /* Products */,
+				EE3828CF2B99D2800002D00C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -209,10 +219,8 @@
 			);
 			name = vk;
 			packageProductDependencies = (
-				EE0A41DB2AFAEB6E0070627A /* Alamofire */,
-				EE0513E92AFD97C200DE5874 /* Kingfisher */,
-				EED1606C2B0E165D006D3FEA /* Realm */,
-				EED1606E2B0E165D006D3FEA /* RealmSwift */,
+				EE3828CD2B99D21A0002D00C /* Kingfisher */,
+				EE3828D02B99D2800002D00C /* Alamofire */,
 			);
 			productName = vk;
 			productReference = EEB738DD2A49E3B0001F8A1B /* vk.app */;
@@ -290,6 +298,7 @@
 				EED1606A2B0CEA87006D3FEA /* Photo.swift in Sources */,
 				EE0A41DE2AFAEB8C0070627A /* VKService.swift in Sources */,
 				EE9B12B32A50A410002235B3 /* FriendCollectionViewController.swift in Sources */,
+				EE9DD3D12BADEB9500AD02A0 /* Fonts.swift in Sources */,
 				EED03A682A62E53C000A3196 /* LaunchScreenViewController.swift in Sources */,
 				EE9B12972A4DBA38002235B3 /* TabBarBuilder.swift in Sources */,
 				EE9B12992A4DBC07002235B3 /* FriendsTableViewController.swift in Sources */,
@@ -305,6 +314,7 @@
 				EEB738E32A49E3B0001F8A1B /* SceneDelegate.swift in Sources */,
 				EE0513EE2AFE939600DE5874 /* HeaderFriendsTableViewCell.swift in Sources */,
 				EE9B12AD2A4EFACD002235B3 /* FriendTableViewCell.swift in Sources */,
+				EE9DD3CF2BADD5EB00AD02A0 /* Colors.swift in Sources */,
 				EE9B12A12A4DC0A8002235B3 /* Friend.swift in Sources */,
 				EE9B12B52A50A44B002235B3 /* FriendCollectionViewCell.swift in Sources */,
 				EE9B12372A4C6E31002235B3 /* NewsFeedTableViewController.swift in Sources */,
@@ -556,25 +566,15 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		EE0513E92AFD97C200DE5874 /* Kingfisher */ = {
+		EE3828CD2B99D21A0002D00C /* Kingfisher */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = EE0513E82AFD97C200DE5874 /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
 		};
-		EE0A41DB2AFAEB6E0070627A /* Alamofire */ = {
+		EE3828D02B99D2800002D00C /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = EE0A41DA2AFAEB6E0070627A /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
-		};
-		EED1606C2B0E165D006D3FEA /* Realm */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = EED1606B2B0E165D006D3FEA /* XCRemoteSwiftPackageReference "realm-swift" */;
-			productName = Realm;
-		};
-		EED1606E2B0E165D006D3FEA /* RealmSwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = EED1606B2B0E165D006D3FEA /* XCRemoteSwiftPackageReference "realm-swift" */;
-			productName = RealmSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

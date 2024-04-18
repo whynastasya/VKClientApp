@@ -36,7 +36,7 @@ final class HeaderFriendsTableViewCell: UITableViewCell {
     private func setupTitleLabel() {
         contentView.addSubview(titleLabel)
         titleLabel.text = "TextText"
-        titleLabel.textColor = .white
+        titleLabel.textColor = .vkWhite
         titleLabel.font = .systemFont(ofSize: 20, weight: .bold)
         titleLabel.textAlignment = .left
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -46,19 +46,19 @@ final class HeaderFriendsTableViewCell: UITableViewCell {
         contentView.addSubview(countTitleLabel)
         countTitleLabel.text = "000"
         countTitleLabel.font = .systemFont(ofSize: 13, weight: .medium)
-        countTitleLabel.textColor = .gray
+        countTitleLabel.textColor = .vkGray
         countTitleLabel.translatesAutoresizingMaskIntoConstraints = false
     }
     
     private func setupSortingButton() {
         contentView.addSubview(sortingButton)
         var configuration = UIButton.Configuration.plain()
-        configuration.image = UIImage(systemName: "arrow.up.arrow.down")?.withTintColor(.gray, renderingMode: .alwaysOriginal)
+        configuration.image = UIImage(systemName: "arrow.up.arrow.down")?.withTintColor(.vkGray, renderingMode: .alwaysOriginal)
         configuration.title = "Сортировка: По важности"
         configuration.titleAlignment = .leading
         configuration.preferredSymbolConfigurationForImage = .init(scale: .medium)
         configuration.imagePlacement = .trailing
-        configuration.baseForegroundColor = .gray
+        configuration.baseForegroundColor = .vkGray
         configuration.contentInsets = .init(top: 0, leading: 0, bottom: 0, trailing: 0)
         configuration.titleTextAttributesTransformer = UIConfigurationTextAttributesTransformer { incoming in
             var outgoing = incoming
@@ -72,7 +72,7 @@ final class HeaderFriendsTableViewCell: UITableViewCell {
     private func setupTypePeopleButton() {
         contentView.addSubview(friendsTypeButton)
         var configuration = UIButton.Configuration.plain()
-        configuration.image = UIImage(systemName: "chevron.down")?.withTintColor(.systemBlue, renderingMode: .alwaysOriginal)
+        configuration.image = UIImage(systemName: "chevron.down")?.withTintColor(.vkBlue, renderingMode: .alwaysOriginal)
         configuration.preferredSymbolConfigurationForImage = .init(scale: .medium)
         configuration.title = "Списки"
         configuration.imagePlacement = .trailing

@@ -24,8 +24,8 @@ final class AvailableCommunityTableViewCell: ContentItemTableViewCell {
     private func setupAddButton() {
         contentView.addSubview(subscribeButton)
         subscribeButton.translatesAutoresizingMaskIntoConstraints = false
-        subscribeButton.setImage(UIImage(systemName: "plus.app", withConfiguration: UIImage.SymbolConfiguration(scale: .large))?.withTintColor(.systemBlue, renderingMode: .alwaysOriginal), for: .normal)
-        subscribeButton.setImage(UIImage(systemName: "checkmark.square", withConfiguration: UIImage.SymbolConfiguration(scale: .large))?.withTintColor(.gray, renderingMode: .alwaysOriginal), for: .selected)
+        subscribeButton.setImage(UIImage(systemName: "plus.app", withConfiguration: UIImage.SymbolConfiguration(scale: .large))?.withTintColor(.vkBlue, renderingMode: .alwaysOriginal), for: .normal)
+        subscribeButton.setImage(UIImage(systemName: "checkmark.square", withConfiguration: UIImage.SymbolConfiguration(scale: .large))?.withTintColor(.vkGray, renderingMode: .alwaysOriginal), for: .selected)
         subscribeButton.addTarget(self, action: #selector(subscribeCommunity(_ :)), for: .touchUpInside)
         NSLayoutConstraint.activate([
             subscribeButton.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),

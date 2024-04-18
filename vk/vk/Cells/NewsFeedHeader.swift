@@ -11,8 +11,8 @@ final class NewsFeedHeader: UIView {
     
     private var buttons = [UIButton]()
     private var selectorView = UIView()
-    private var selectedSegmentedTintColor = UIColor.white
-    private var textColor = UIColor.gray
+    private var selectedSegmentedTintColor = UIColor.vkWhite
+    private var textColor = UIColor.vkGray
     private var buttonTitles = ["Новости", "Для вас", "Актуальное"]
     private var selectedIndex = 0
     

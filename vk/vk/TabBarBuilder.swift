@@ -26,9 +26,9 @@ final class TabBarBuilder {
         userViewController.tabBarItem.image = UIImage(systemName: "person.crop.circle")
         
         let tabBarController = UITabBarController()
-        tabBarController.tabBar.tintColor = .white
-        tabBarController.tabBar.unselectedItemTintColor = .gray
-        tabBarController.tabBar.backgroundColor = .black
+        tabBarController.tabBar.tintColor = .vkWhite
+        tabBarController.tabBar.unselectedItemTintColor = .vkGray
+        tabBarController.tabBar.backgroundColor = .vkBlack
         tabBarController.tabBar.isTranslucent = false
         tabBarController.setViewControllers([newsFeedViewController, groupsViewController, messengerViewController, friendsViewController, userViewController], animated: true)
         
