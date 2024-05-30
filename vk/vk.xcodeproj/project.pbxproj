@@ -14,8 +14,6 @@
 		EE0513F62B023BC800DE5874 /* LastSeenTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE0513F52B023BC800DE5874 /* LastSeenTime.swift */; };
 		EE0A41D92AFAB1700070627A /* AuthorizationWKWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE0A41D82AFAB16F0070627A /* AuthorizationWKWebView.swift */; };
 		EE0A41DE2AFAEB8C0070627A /* VKService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE0A41DD2AFAEB8C0070627A /* VKService.swift */; };
-		EE3828CE2B99D21A0002D00C /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = EE3828CD2B99D21A0002D00C /* Kingfisher */; };
-		EE3828D12B99D2800002D00C /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = EE3828D02B99D2800002D00C /* Alamofire */; };
 		EE4A5A792A951C08002D12BD /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4A5A782A951C08002D12BD /* Session.swift */; };
 		EE9B12372A4C6E31002235B3 /* NewsFeedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9B12362A4C6E31002235B3 /* NewsFeedTableViewController.swift */; };
 		EE9B123B2A4C6E89002235B3 /* MessengerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9B123A2A4C6E89002235B3 /* MessengerViewController.swift */; };
@@ -48,6 +46,8 @@
 		EED03A682A62E53C000A3196 /* LaunchScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED03A672A62E53C000A3196 /* LaunchScreenViewController.swift */; };
 		EED03A6A2A62E7C1000A3196 /* Circle.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED03A692A62E7C1000A3196 /* Circle.swift */; };
 		EED1606A2B0CEA87006D3FEA /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED160692B0CEA87006D3FEA /* Photo.swift */; };
+		EEF0F59B2C08DDCC00C89F6C /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = EEF0F59A2C08DDCC00C89F6C /* Alamofire */; };
+		EEF0F59D2C08DDE100C89F6C /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = EEF0F59C2C08DDE100C89F6C /* Kingfisher */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -99,8 +99,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EE3828CE2B99D21A0002D00C /* Kingfisher in Frameworks */,
-				EE3828D12B99D2800002D00C /* Alamofire in Frameworks */,
+				EEF0F59D2C08DDE100C89F6C /* Kingfisher in Frameworks */,
+				EEF0F59B2C08DDCC00C89F6C /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -219,8 +219,8 @@
 			);
 			name = vk;
 			packageProductDependencies = (
-				EE3828CD2B99D21A0002D00C /* Kingfisher */,
-				EE3828D02B99D2800002D00C /* Alamofire */,
+				EEF0F59A2C08DDCC00C89F6C /* Alamofire */,
+				EEF0F59C2C08DDE100C89F6C /* Kingfisher */,
 			);
 			productName = vk;
 			productReference = EEB738DD2A49E3B0001F8A1B /* vk.app */;
@@ -566,15 +566,15 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		EE3828CD2B99D21A0002D00C /* Kingfisher */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = EE0513E82AFD97C200DE5874 /* XCRemoteSwiftPackageReference "Kingfisher" */;
-			productName = Kingfisher;
-		};
-		EE3828D02B99D2800002D00C /* Alamofire */ = {
+		EEF0F59A2C08DDCC00C89F6C /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = EE0A41DA2AFAEB6E0070627A /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
+		};
+		EEF0F59C2C08DDE100C89F6C /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EE0513E82AFD97C200DE5874 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

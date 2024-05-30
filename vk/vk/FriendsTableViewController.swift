@@ -30,10 +30,13 @@ final class FriendsTableViewController: UITableViewController {
         VKService().getFriends(with: Session.instance.userID) { friends in
             self.friends = friends
             self.reloadDataWithAnimation()
+            print(friends)
+            print("12")
         }
         setupTableView()
         setupNavigationBar()
         setupSearchController()
+        print("Эфыаф")
     }
     
     private func setupTableView() {

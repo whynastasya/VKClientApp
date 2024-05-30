@@ -16,13 +16,16 @@ final class VKService {
             "user_id": userID,
             "order": "hints",
             "fields": "photo_50, city, education, online, bdate, last_seen, sex",
-            "v": "5.154"
+            "v": "5.236"
         ]
         
         AF.request(url, method: .get, parameters: parameters).response { response in
             if let data = response.data {
                 guard let friends = try? JSONDecoder().decode(FriendsResponse.self, from: data).response.items else { return }
                 completion(friends)
+                print(response)
+            } else {
+                print(response)
             }
         }
     }
@@ -41,6 +44,8 @@ final class VKService {
             if let data = response.data {
                 guard let groups = try? JSONDecoder().decode(GroupsResponse.self, from: data).response.items else { return }
                 completion(groups)
+            } else {
+                print(response.error)
             }
         }
     }
